@@ -279,6 +279,74 @@ export const doctorsData = [
       "Post Doctoral Fellowship in Endogynecology — TN Dr MGR University",
       "Diploma in Gynaec Endoscopy (DGE) — Kiel’s University, Germany"
     ]
+  },
+  { 
+    id: "dr-rishikesh-gowtham",
+    num: "07",
+    name: "Dr. G. Rishikesh Gowtham",
+    displayName: "DR. G. RISHIKESH GOWTHAM",
+    role: "General, Laparoscopic & Robotic Surgeon",
+    speciality: "General, Laparoscopic & Robotic Surgeon",
+    subSpeciality: "Advanced Hernia • Proctology • Surgical Oncology",
+    experience: "Senior Resident in General Surgery — PSG IMSR • University Rank Holder in MS General Surgery",
+    image: "/doctors/dr-rishikesh-gowtham.png",
+    bio: "Dr. G. Rishikesh Gowtham is a General, Laparoscopic, and Robotic Surgeon with specialized expertise in advanced hernia repairs, proctology, surgical oncology, and robotic surgical systems. A University Rank Holder in MS General Surgery from Vinayaka Mission Kirupananda Variyar Medical College and an alumnus of SRM Medical College, he holds fellowships from IAGES (FIAGES) and advanced laparoscopic & robotic surgery (FALS Robotic). His clinical practice is dedicated to patient-centric, evidence-based surgical precision and modern minimally invasive techniques.",
+    currentRole: "Senior Resident, Department of General Surgery, PSG IMSR, Coimbatore • Former Registrar in Department of Surgical Oncology, Shri Ramakrishna Hospital, Coimbatore",
+    areasOfInterest: [
+      "Advanced Hernia Surgery & Abdominal Wall Reconstruction",
+      "Laser & Stapler Proctology (Piles, Fissure, Fistula)",
+      "Surgical Oncology & Tumor Resection",
+      "Advanced Laparoscopic Gastrointestinal Procedures",
+      "Robotic Surgical Systems & Precision Surgery"
+    ],
+    expertise: [
+      "Advanced Laparoscopic Procedures",
+      "Robotic Surgical Systems",
+      "Advanced Hernia Surgery (AWR)",
+      "Proctology & Anorectal Disorders",
+      "Surgical Oncology",
+      "Evidence-Based Perioperative Practice"
+    ],
+    specialityTraining: [
+      "Surgical Oncology — Thangam Cancer Centre and Hospital, Namakkal",
+      "Surgical Gastroenterology — GEM Hospital, Coimbatore",
+      "Urology — Vedanayagam Hospital, Coimbatore",
+      "Plastic Surgery — Ganga Hospital, Coimbatore"
+    ],
+    memberships: [
+      "Association of Surgeons of India (ASI)",
+      "Indian Medical Association (IMA)",
+      "Indian Association of Gastro Endo Surgeons (IAGES)",
+      "Hernia Society of India (HSI)"
+    ],
+    certifications: [
+      "FIAGES — Fellowship of Indian Association of Gastro Endo Surgeons",
+      "FALS (Robotic) — Fellowship in Advanced Laparoscopic Surgery (Robotic)",
+      "Basic Laparoscopic Training",
+      "Certified BLS & ACLS affiliated to American Heart Association",
+      "Completed Certification Programme in Basic Course in Biomedical Research (ICMR / NIE)"
+    ],
+    recognition: [
+      "University Rank Holder in MS General Surgery Post Graduation Examinations",
+      "First Prize: Best Conference Poster Presentation ('Liposarcoma of Right Thigh') — ASICON 2021",
+      "Conference Poster Presentation ('Desmoid Fibromatosis of Abdomen') — NATCON IASO 2022",
+      "Conference Poster Presentation ('Recurrent Sacral Chordoma')",
+      "Paper Presentation on Collagen Granules vs Conventional Wound Closure — ASICON 2021"
+    ],
+    academicContributions: [
+      "Author of 3 Scopus-Indexed Research Publications on surgical site infections, acute appendicitis scoring (RIPASA vs. ALVARADO), and non-palpable BI-RADS 4 breast lesions",
+      "Active Delegate: ROBOCON (PSG IMSR 2024), GASTROCON 2024, SURGICON 2024",
+      "Conference Delegate: AWR Deep Impact 2025, IAGES - ELSA 2026, ASICON (2021, 2022, 2024), TNASICON (2021, 2022)"
+    ],
+    research: "Author of peer-reviewed Scopus-indexed research in international journals including the International Journal of Health Sciences and Journal of Pharmaceutical Negative Results, focusing on Surgical Site Infections, Acute Appendicitis scoring models, and Breast Pathology.",
+    qualifications: [
+      "MBBS with Compulsory Rotatory Residential Internship — SRM Medical College and Hospital, Chennai (2013–2019)",
+      "M.S. General Surgery (University Rank Holder) — Vinayaka Mission Kirupananda Variyar Medical College, Salem (2020–2023)",
+      "FIAGES — Fellowship of Indian Association of Gastro Endo Surgeons",
+      "FALS (Robotic) — Fellowship in Advanced Laparoscopic Surgery (Robotic)",
+      "Senior Resident, Department of General Surgery — PSG IMSR, Coimbatore",
+      "Former Registrar in Department of Surgical Oncology — Shri Ramakrishna Hospital, Coimbatore"
+    ]
   }
 ];
 

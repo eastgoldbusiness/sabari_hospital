@@ -12,7 +12,7 @@ const ALL_WEBSITE_IMAGES = [
   { src: '/hero/image-10.png', alt: 'Hospital Main Entrance', title: 'Hospital Main Entrance' },
 
   // Hospital Ceremonies, Doctors & Healthcare Team
-  { src: '/hero/image-29.png', alt: 'Hospital Opening Ceremony', title: 'Hospital Opening Ceremony' },
+  { src: '/hero/image-13.png', alt: 'Hospital Opening Ceremony', title: 'Hospital Opening Ceremony' },
   { src: '/hero/image-28.png', alt: 'Lamp Lighting Ceremony', title: 'Lamp Lighting Ceremony' },
   { src: '/gallery/image-28.png', alt: 'Dr. Saravana Kumar, Dr. Rashmi & Nursing Care Team', title: 'Dr. Saravana Kumar, Dr. Rashmi & Nursing Care Team' },
   { src: '/gallery/image-29.png', alt: 'Dr. Mangaleswari & Dr. Saravana Kumar with Family & Patients', title: 'Dr. Mangaleswari & Dr. Saravana Kumar with Family & Patients' },
@@ -22,7 +22,6 @@ const ALL_WEBSITE_IMAGES = [
   { src: '/hero/image-17.png', alt: 'Dedicated Nursing & Patient Care Team', title: 'Dedicated Nursing & Patient Care Team' },
 
   // Clinical Facilities, Operation Theatre & Consultation Rooms
-  { src: '/hero/image-14.png', alt: 'Executive Consultation Suite', title: 'Executive Consultation Suite' },
   { src: '/hero/image-16.png', alt: 'Critical Care & Patient Recovery Infrastructure', title: 'Critical Care & Patient Recovery Infrastructure' },
   { src: '/gallery/image-18.png', alt: 'Consultation Room 4 - Dr. R. Rashmi', title: 'Consultation Room 4 - Dr. R. Rashmi' },
   { src: '/gallery/image-19.png', alt: 'Consultant Gynecologist & Urologist Chambers', title: 'Consultant Gynecologist & Urologist Chambers' },
@@ -41,7 +40,8 @@ const ALL_WEBSITE_IMAGES = [
   { src: '/rashmi.png', alt: 'Dr. Rashmi Saravanakumar - General Physician & Diabetologist', title: 'Dr. Rashmi Saravanakumar - General Physician & Diabetologist' },
   { src: '/doctors/doctor-4.png', alt: 'Dr. Deepika Mohankumar PT - Physiotherapy Specialist', title: 'Dr. Deepika Mohankumar PT - Physiotherapy Specialist' },
   { src: '/doctors/doctor-5.png', alt: 'Dr. Uthara Vijai Kumar - Pulmonologist', title: 'Dr. Uthara Vijai Kumar - Pulmonologist' },
-  { src: '/doctors/dr-deepika.png', alt: 'Dr. Deepika - Obstetrician & Gynaecologist', title: 'Dr. Deepika - Obstetrician & Gynaecologist' }
+  { src: '/doctors/dr-deepika.png', alt: 'Dr. Deepika - Obstetrician & Gynaecologist', title: 'Dr. Deepika - Obstetrician & Gynaecologist' },
+  { src: '/doctors/dr-rishikesh-gowtham.png', alt: 'Dr. G. Rishikesh Gowtham - General, Laparoscopic & Robotic Surgeon', title: 'Dr. G. Rishikesh Gowtham - General, Laparoscopic & Robotic Surgeon' }
 ];
 
 export function GalleryPage() {

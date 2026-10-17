@@ -27,6 +27,7 @@ export function DoctorProfile() {
     if (cleanParam.includes('rashmi') && cleanDocId.includes('rashmi')) return true;
     if (cleanParam.includes('mangal') && cleanDocId.includes('mangal')) return true;
     if (cleanParam.includes('uthara') && cleanDocId.includes('uthara')) return true;
+    if ((cleanParam.includes('rishikesh') || cleanParam.includes('gowtham')) && (cleanDocId.includes('rishikesh') || cleanDocId.includes('gowtham'))) return true;
     return false;
   });
 
@@ -215,6 +216,51 @@ export function DoctorProfile() {
                   {doctor.recognition.map((rec, index) => (
                     <li key={index} className="p-4 border-l-2 border-black bg-neutral-50 text-neutral-800 text-[15px]">
                       {rec}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {/* Speciality Training */}
+            {doctor.specialityTraining && (
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.42, duration: 0.5 }}
+                className="flex flex-col gap-4 mb-12"
+              >
+                <h2 className="text-[13px] font-semibold tracking-[0.2em] uppercase text-neutral-400 flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-black" />
+                  ADVANCED CLINICAL & SPECIALITY TRAINING
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {doctor.specialityTraining.map((st, index) => (
+                    <div key={index} className="p-3.5 bg-neutral-50 border border-neutral-100 text-[14px] text-neutral-700">
+                      {st}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Professional Memberships */}
+            {doctor.memberships && (
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.44, duration: 0.5 }}
+                className="flex flex-col gap-4 mb-12"
+              >
+                <h2 className="text-[13px] font-semibold tracking-[0.2em] uppercase text-neutral-400 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-black" />
+                  PROFESSIONAL MEMBERSHIPS & SOCIETIES
+                </h2>
+                <ul className="flex flex-col gap-3">
+                  {doctor.memberships.map((mem, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="text-neutral-400 text-xs mt-1.5">•</span>
+                      <span className="text-neutral-800 text-[15px]">{mem}</span>
                     </li>
                   ))}
                 </ul>

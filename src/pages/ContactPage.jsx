@@ -265,6 +265,21 @@ export function ContactPage() {
                 </span>
               </div>
 
+              {/* Business Profile */}
+              <div>
+                <span className="text-[12px] font-mono tracking-[0.2em] uppercase text-neutral-400 block mb-1.5">
+                  BUSINESS PROFILE
+                </span>
+                <a
+                  href="https://share.google/Z20ayBa3kPQp4m8LG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[17px] sm:text-[19px] font-medium text-black hover:text-neutral-600 transition-colors inline-block"
+                >
+                  Google Business Profile
+                </a>
+              </div>
+
               {/* Address Placeholder */}
               <div>
                 <span className="text-[12px] font-mono tracking-[0.2em] uppercase text-neutral-400 block mb-1.5">
@@ -279,7 +294,7 @@ export function ContactPage() {
               {/* Optional Location Element */}
               <div className="pt-2">
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Sabari+Multispeciality+Hospital+Coimbatore+Tamil+Nadu"
+                  href="https://share.google/Z20ayBa3kPQp4m8LG"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 text-[12px] font-mono font-semibold tracking-wider uppercase text-black hover:opacity-60 transition-opacity"
