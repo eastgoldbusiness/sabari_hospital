@@ -31,8 +31,8 @@ export function Home() {
   return (
     <div className="w-full bg-white flex flex-col items-center justify-start selection:bg-neutral-200">
       <SEO 
-        title="Sabari Hospitals | Multispeciality Hospital"
-        description="Sabari Hospitals is a leading multispeciality hospital in Coimbatore, Tamil Nadu, offering 50+ years of compassionate care across obstetrics, gynaecology, surgery, diabetes, and critical care."
+        title="Sabari Hospitals | Multispeciality Hospital in Coimbatore"
+        description="Sabari Hospitals is a multispeciality hospital in Coimbatore, Tamil Nadu. Book appointments with expert doctors in obstetrics, surgery, diabetes, and critical care."
         canonicalPath="/"
       />
       <Hero />

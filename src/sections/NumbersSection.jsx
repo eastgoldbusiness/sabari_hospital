@@ -32,7 +32,7 @@ function AnimatedNumber({ value }) {
     });
   }, [springValue, suffix]);
 
-  return <span ref={ref}>{0 + suffix}</span>;
+  return <span ref={ref}>{value}</span>;
 }
 
 export function NumbersSection() {
