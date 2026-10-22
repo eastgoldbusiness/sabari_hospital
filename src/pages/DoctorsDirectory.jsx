@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { doctorsData } from '../data/landingData';
 import { Footer } from '../sections/Footer';
 import { useAppointment } from '../context/AppointmentContext';
+import { SEO } from '../components/layout/SEO';
 
 export function DoctorsDirectory() {
   const navigate = useNavigate();
@@ -66,6 +67,11 @@ export function DoctorsDirectory() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200 selection:text-black">
+      <SEO 
+        title="Our Doctors & Medical Specialists | Sabari Hospitals"
+        description="Meet the team of experienced medical consultants and surgeons at Sabari Hospitals in Coimbatore, specializing in anaesthesiology, gynaecology, diabetes, pulmonology, and surgery."
+        canonicalPath="/doctors"
+      />
       
       {/* 1. Page Opening - Controlled and compact so preview is visible immediately */}
       <section className="w-full pt-28 pb-8 lg:pt-32 lg:pb-10 px-6 lg:px-16 border-b border-neutral-200">

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { Mail, Briefcase, GraduationCap, Users } from 'lucide-react';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function Careers() {
   const { openAppointmentModal } = useAppointment();
@@ -30,6 +31,11 @@ export function Careers() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Careers & Healthcare Opportunities | Sabari Hospitals"
+        description="Join the healthcare team at Sabari Hospitals Coimbatore. Explore career opportunities for doctors, nursing professionals, technicians, and administrative staff."
+        canonicalPath="/about/careers"
+      />
       
       {/* 1. Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 px-6 lg:px-16 border-b border-neutral-200">

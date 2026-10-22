@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { ShieldCheck, CheckCircle2, FileText, Activity } from 'lucide-react';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function Accreditations() {
   const { openAppointmentModal } = useAppointment();
@@ -39,6 +40,11 @@ export function Accreditations() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Clinical Standards & Safety Accreditations | Sabari Hospitals"
+        description="Explore patient safety protocols, surgical quality checklists, and sterilization standards upheld at Sabari Hospitals Coimbatore."
+        canonicalPath="/about/accreditations"
+      />
       
       {/* 1. Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 px-6 lg:px-16 border-b border-neutral-200">

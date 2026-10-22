@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../../sections/Footer';
+import { SEO } from '../../components/layout/SEO';
 
 export function PrivacyPolicy() {
   useEffect(() => {
@@ -212,6 +213,11 @@ export function PrivacyPolicy() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Privacy Policy | Sabari Hospitals"
+        description="Read the privacy policy of Sabari Hospitals regarding patient data confidentiality, medical records protection, and compliance with Indian healthcare regulations."
+        canonicalPath="/privacy-policy"
+      />
       
       {/* Header / Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-36 sm:pb-16 px-6 lg:px-16 border-b border-neutral-200">

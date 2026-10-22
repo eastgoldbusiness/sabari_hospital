@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Footer } from '../sections/Footer';
+import { SEO } from '../components/layout/SEO';
 
 export function ContactPage() {
   const [searchParams] = useSearchParams();
   const subjectParam = searchParams.get('subject') || '';
 
   useEffect(() => {
-    document.title = "Contact Us | Sabari Hospitals";
     window.scrollTo(0, 0);
   }, []);
 
@@ -183,6 +183,26 @@ export function ContactPage() {
 
   return (
     <div className="w-full min-h-screen bg-white text-black flex flex-col justify-between selection:bg-neutral-200">
+      <SEO 
+        title="Contact Us & Hospital Location | Sabari Hospitals Coimbatore"
+        description="Contact Sabari Hospitals in Coimbatore, Tamil Nadu. Reach our 24/7 emergency helpline at 0422-2442200, find directions, or submit a patient inquiry."
+        canonicalPath="/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Hospital",
+          "@id": "https://sabarihospital.in/contact#contact",
+          "name": "Sabari Hospitals",
+          "url": "https://sabarihospital.in/contact",
+          "telephone": "+91-422-2442200",
+          "email": "sabarimultispecialityhospital@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Coimbatore",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          }
+        }}
+      />
       
       {/* Main Single-Page Contact Section */}
       <main className="w-full max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-16 pt-[110px] md:pt-[180px] pb-16 md:pb-32 flex-grow">

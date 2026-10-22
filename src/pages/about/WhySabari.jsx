@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function WhySabari() {
   const { openAppointmentModal } = useAppointment();
@@ -40,6 +41,11 @@ export function WhySabari() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Why Choose Sabari Hospitals | Patient-Centred Healthcare"
+        description="Discover why families trust Sabari Hospitals in Coimbatore: personalized medical attention, senior clinical specialists, modern infrastructure, and transparent care."
+        canonicalPath="/about/why-sabari"
+      />
       
       {/* 1. Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 px-6 lg:px-16 border-b border-neutral-200">

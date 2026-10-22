@@ -5,6 +5,7 @@ import { ArrowLeft, Award, BookOpen, CalendarCheck, CheckCircle, ShieldCheck } f
 import { motion } from 'framer-motion';
 import { Footer } from '../sections/Footer';
 import { useAppointment } from '../context/AppointmentContext';
+import { SEO } from '../components/layout/SEO';
 
 export function DoctorProfile() {
   const { id } = useParams();
@@ -38,6 +39,12 @@ export function DoctorProfile() {
   if (!doctor) {
     return (
       <div data-nav-theme="light" className="w-full min-h-screen bg-white flex flex-col items-center justify-center pt-24 px-6">
+        <SEO 
+          title="Doctor Not Found | Sabari Hospitals"
+          description="The requested specialist profile could not be located at Sabari Hospitals Coimbatore."
+          canonicalPath="/doctors"
+          noindex={true}
+        />
         <h1 className="text-4xl font-medium mb-4 text-black">Doctor Not Found</h1>
         <p className="text-neutral-500 mb-8">The requested specialist profile could not be located.</p>
         <button 
@@ -50,8 +57,36 @@ export function DoctorProfile() {
     );
   }
 
+  const doctorTitle = `${doctor.name} - ${doctor.role || doctor.speciality} | Sabari Hospitals`;
+  const doctorSnippet = doctor.bio && doctor.bio.length > 140 ? `${doctor.bio.slice(0, 140)}...` : (doctor.bio || '');
+  const doctorDescription = `Consult ${doctor.name}, ${doctor.role || doctor.speciality} at Sabari Hospitals Coimbatore. ${doctorSnippet}`;
+
+  const physicianSchema = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "@id": `https://sabarihospital.in/doctors/${doctor.id}#physician`,
+    "name": doctor.name,
+    "jobTitle": doctor.role || doctor.speciality,
+    "medicalSpecialty": doctor.speciality,
+    "image": doctor.image?.startsWith('http') ? doctor.image : `https://sabarihospital.in${doctor.image}`,
+    "worksFor": {
+      "@type": "Hospital",
+      "name": "Sabari Hospitals",
+      "url": "https://sabarihospital.in/"
+    },
+    "description": doctor.bio
+  };
+
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white pt-28 selection:bg-neutral-200">
+      <SEO 
+        title={doctorTitle}
+        description={doctorDescription}
+        canonicalPath={`/doctors/${doctor.id}`}
+        type="profile"
+        image={doctor.image}
+        schema={physicianSchema}
+      />
       <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-16 pb-20">
         
         {/* Back Button */}

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { facilityCategories } from '../../data/facilitiesExperienceData';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function FacilitiesLanding() {
   const { openAppointmentModal } = useAppointment();
@@ -17,6 +18,11 @@ export function FacilitiesLanding() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Hospital Facilities & Infrastructure | Sabari Hospitals"
+        description="Explore modern facilities, sterile surgical operating theatres, 24/7 emergency rooms, and patient care suites at Sabari Hospitals Coimbatore."
+        canonicalPath="/gallery"
+      />
       
       {/* 1. Cinematic Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-24 px-6 lg:px-16 border-b border-neutral-200 bg-white">

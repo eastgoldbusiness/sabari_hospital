@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Footer } from '../sections/Footer';
 import InfiniteSpiral from '../components/ui/InfiniteSpiral';
+import { SEO } from '../components/layout/SEO';
 
 // Only authentic Sabari Hospital photographs (all AI generated images removed)
 const ALL_WEBSITE_IMAGES = [
@@ -57,7 +58,6 @@ export function GalleryPage() {
   });
 
   useEffect(() => {
-    document.title = "Gallery | Sabari Multispeciality Hospital";
     window.scrollTo(0, 0);
 
     const updateConfig = () => {
@@ -105,6 +105,11 @@ export function GalleryPage() {
 
   return (
     <div className="w-full min-h-screen bg-[#111827] text-white flex flex-col justify-between selection:bg-neutral-800">
+      <SEO 
+        title="Hospital Facilities & Photo Gallery | Sabari Hospitals"
+        description="Explore authentic photographs of Sabari Hospitals Coimbatore: our clinical facilities, operating suites, outpatient consultation rooms, pharmacy, and medical team."
+        canonicalPath="/gallery"
+      />
       
       {/* 
         Full Page InfiniteSpiral Section

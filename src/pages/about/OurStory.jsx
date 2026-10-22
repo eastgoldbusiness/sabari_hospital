@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { ArrowRight, Clock, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function OurStory() {
   const { openAppointmentModal } = useAppointment();
@@ -31,6 +32,11 @@ export function OurStory() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Our Story & Heritage | Sabari Hospitals Coimbatore"
+        description="Discover the 50+ year legacy of Sabari Hospitals in Coimbatore, founded with a commitment to compassionate healthcare, clinical excellence, and patient trust."
+        canonicalPath="/about/our-story"
+      />
       
       {/* 1. Editorial Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 px-6 lg:px-16 border-b border-neutral-200">

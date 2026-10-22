@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function PatientExperiencePage() {
   const { openAppointmentModal } = useAppointment();
@@ -45,6 +46,11 @@ export function PatientExperiencePage() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Patient Experience & Hospital Journey | Sabari Hospitals"
+        description="Understand the patient care journey at Sabari Hospitals Coimbatore: from front-desk arrival and listening consultations to recovery and post-discharge follow-up."
+        canonicalPath="/about/patient-experience"
+      />
       
       {/* 1. Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 px-6 lg:px-16 border-b border-neutral-200">

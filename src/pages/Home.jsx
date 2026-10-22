@@ -11,6 +11,7 @@ import { HeartOfSabariSection } from '../sections/HeartOfSabariSection';
 import { DoctorsSection } from '../sections/DoctorsSection';
 import { PatientExperience } from '../sections/PatientExperience';
 import { Footer } from '../sections/Footer';
+import { SEO } from '../components/layout/SEO';
 
 export function Home() {
   const location = useLocation();
@@ -29,6 +30,11 @@ export function Home() {
 
   return (
     <div className="w-full bg-white flex flex-col items-center justify-start selection:bg-neutral-200">
+      <SEO 
+        title="Sabari Hospitals | Multispeciality Hospital"
+        description="Sabari Hospitals is a leading multispeciality hospital in Coimbatore, Tamil Nadu, offering 50+ years of compassionate care across obstetrics, gynaecology, surgery, diabetes, and critical care."
+        canonicalPath="/"
+      />
       <Hero />
       <OurApproach />
       <NumbersSection />

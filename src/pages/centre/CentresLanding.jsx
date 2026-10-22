@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { centreCategories } from '../../data/centresOfExcellenceData';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function CentresLanding() {
   const { openAppointmentModal } = useAppointment();
@@ -17,6 +18,11 @@ export function CentresLanding() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Centres of Excellence | Sabari Hospitals"
+        description="Explore specialized clinical departments and centres of excellence at Sabari Hospitals Coimbatore: medical care, surgical services, women's health, critical care, and diagnostics."
+        canonicalPath="/centre-of-excellence"
+      />
       
       {/* 1. Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-24 px-6 lg:px-16 border-b border-neutral-200 bg-white">

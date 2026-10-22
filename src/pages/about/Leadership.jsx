@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { ShieldCheck, Award, ArrowRight } from 'lucide-react';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function Leadership() {
   const { openAppointmentModal } = useAppointment();
@@ -48,6 +49,11 @@ export function Leadership() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Hospital Leadership & Governance | Sabari Hospitals"
+        description="Meet the clinical and executive leadership of Sabari Hospitals Coimbatore, guided by Dr. Saravana Kumar S and Founder Dr. Mangaleswari."
+        canonicalPath="/about/leadership"
+      />
       
       {/* 1. Editorial Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 px-6 lg:px-16 border-b border-neutral-200">

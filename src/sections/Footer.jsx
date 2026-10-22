@@ -87,9 +87,9 @@ export function Footer() {
 
       {/* Massive Typography */}
       <div className="max-w-[1600px] w-full mx-auto pt-10 sm:pt-16 pb-2 overflow-hidden flex flex-col items-center">
-        <h1 className="text-[11vw] leading-none font-bold tracking-[-0.04em] bg-gradient-to-b from-white/60 via-white/30 to-white/10 bg-clip-text text-transparent text-center whitespace-nowrap overflow-hidden max-w-full pointer-events-none select-none">
+        <p aria-hidden="true" className="text-[11vw] leading-none font-bold tracking-[-0.04em] bg-gradient-to-b from-white/60 via-white/30 to-white/10 bg-clip-text text-transparent text-center whitespace-nowrap overflow-hidden max-w-full pointer-events-none select-none">
           SABARI HOSPITAL
-        </h1>
+        </p>
         
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] sm:text-[12px] font-sans uppercase tracking-[0.12em] text-white/40 mt-12 relative z-10">
           {/* Left Side: Copyright */}

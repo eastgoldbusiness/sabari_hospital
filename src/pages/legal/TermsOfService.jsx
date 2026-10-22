@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../../sections/Footer';
+import { SEO } from '../../components/layout/SEO';
 
 export function TermsOfService() {
   useEffect(() => {
@@ -168,6 +169,11 @@ export function TermsOfService() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title="Terms of Service & Medical Disclaimer | Sabari Hospitals"
+        description="Review terms of service, website terms of use, and medical disclaimers for Sabari Hospitals in Coimbatore, Tamil Nadu."
+        canonicalPath="/terms-of-service"
+      />
       
       {/* Header / Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-36 sm:pb-16 px-6 lg:px-16 border-b border-neutral-200">
