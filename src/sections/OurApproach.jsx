@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export function OurApproach() {
@@ -32,6 +33,15 @@ export function OurApproach() {
             <p className="text-[16px] sm:text-[18px] lg:text-[22px] text-neutral-600 leading-[1.6] max-w-lg font-light">
               Guided by five decades of compassionate clinical care, ensuring every treatment is personalized, precise, and centered on human healing.
             </p>
+            <div>
+              <Link 
+                to="/about/our-story"
+                className="inline-flex items-center gap-2 text-[12px] font-bold tracking-widest uppercase text-[#00A99D] hover:text-[#0B4A8B] transition-colors"
+              >
+                <span>Read Our Story</span>
+                <span>&rarr;</span>
+              </Link>
+            </div>
           </div>
         </div>
 

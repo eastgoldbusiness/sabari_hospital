@@ -7,6 +7,7 @@ import {
   orderedSubServices 
 } from '../../data/centresOfExcellenceData';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function ServicePage() {
   const { openAppointmentModal } = useAppointment();
@@ -41,6 +42,11 @@ export function ServicePage() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title={`${service.title} | Sabari Hospitals Coimbatore`}
+        description={service.introduction || `${service.title} services at Sabari Hospitals Coimbatore.`}
+        canonicalPath={`/centre-of-excellence/${service.categorySlug}/${service.slug}`}
+      />
       
       {/* 1. Service Hero (40-50% image, large typography) */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-24 px-6 lg:px-16 border-b border-neutral-200 bg-white">

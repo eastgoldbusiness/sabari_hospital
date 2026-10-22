@@ -122,6 +122,7 @@ export function Navbar() {
           <div className="relative h-full flex items-center" onMouseEnter={() => setActiveMenu('about')}>
             <NavItem 
               label="About Us" 
+              href="/about/our-story"
               hasDropdown={true} 
               isActive={activeMenu === 'about' || isAboutActive} 
               theme={theme}
@@ -135,14 +136,20 @@ export function Navbar() {
           
           {/* 3. Doctors */}
           <div className="h-full flex items-center" onMouseEnter={() => setActiveMenu(null)}>
-            <NavItem label="Doctors" href="/doctors" theme={theme} />
+            <NavItem 
+              label="Doctors" 
+              href="/doctors" 
+              isActive={location.pathname.startsWith('/doctor')}
+              theme={theme} 
+            />
           </div>
           
           {/* 4. Centre of Excellence */}
           <div className="h-full flex items-center" onMouseEnter={() => setActiveMenu(null)}>
             <NavItem 
               label="Centre of Excellence" 
-              onClick={handleScrollToCentres}
+              href="/centre-of-excellence"
+              isActive={location.pathname.startsWith('/centre-of-excellence')}
               theme={theme}
             />
           </div>
@@ -168,13 +175,12 @@ export function Navbar() {
           </div>
 
           {/* 7. Book Appointment */}
-          <button
-            type="button"
-            onClick={() => openAppointmentModal()}
-            className="text-[13px] font-semibold tracking-[0.02em] uppercase px-6 py-[14px] rounded border border-black bg-black text-white hover:bg-neutral-800 transition-all duration-200 ease-in-out shrink-0"
+          <Link
+            to="/book-appointment"
+            className="text-[13px] font-semibold tracking-[0.02em] uppercase px-6 py-[14px] rounded border border-black bg-black text-white hover:bg-neutral-800 transition-all duration-200 ease-in-out shrink-0 text-center"
           >
             Book Appointment
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Header Bar - Simple & Clean */}
@@ -285,6 +291,34 @@ export function Navbar() {
                         >
                           Leadership
                         </Link>
+                        <Link 
+                          to="/about/why-sabari" 
+                          onClick={() => setMobileMenuOpen(false)} 
+                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
+                        >
+                          Why Sabari
+                        </Link>
+                        <Link 
+                          to="/about/accreditations" 
+                          onClick={() => setMobileMenuOpen(false)} 
+                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
+                        >
+                          Accreditations
+                        </Link>
+                        <Link 
+                          to="/about/patient-experience" 
+                          onClick={() => setMobileMenuOpen(false)} 
+                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
+                        >
+                          Patient Experience
+                        </Link>
+                        <Link 
+                          to="/about/careers" 
+                          onClick={() => setMobileMenuOpen(false)} 
+                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
+                        >
+                          Careers
+                        </Link>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -304,16 +338,13 @@ export function Navbar() {
                 <div className="h-[1px] bg-neutral-100" />
                 
                 {/* Centre of Excellence */}
-                <button 
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    handleScrollToCentres();
-                  }} 
-                  className="text-left text-[20px] font-medium text-black py-2 hover:text-neutral-600 transition-colors cursor-pointer"
+                <Link 
+                  to="/centre-of-excellence"
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="text-[20px] font-medium text-black py-2 hover:text-neutral-600 transition-colors"
                 >
                   Centre of Excellence
-                </button>
+                </Link>
 
                 <div className="h-[1px] bg-neutral-100" />
 
@@ -340,16 +371,13 @@ export function Navbar() {
 
               {/* Simple Bottom Action Section */}
               <div className="p-6 border-t border-neutral-100 bg-white shrink-0 flex flex-col gap-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    openAppointmentModal();
-                  }}
-                  className="w-full py-3.5 bg-black text-white text-[13px] font-semibold tracking-wider uppercase text-center rounded-xl hover:bg-neutral-800 active:scale-[0.98] transition-all cursor-pointer shadow-sm"
+                <Link
+                  to="/book-appointment"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full py-3.5 bg-black text-white text-[13px] font-semibold tracking-wider uppercase text-center rounded-xl hover:bg-neutral-800 active:scale-[0.98] transition-all cursor-pointer shadow-sm block"
                 >
                   Book Appointment
-                </button>
+                </Link>
                 <div className="text-center pt-1">
                   <a href="tel:+914222442200" className="text-[13px] text-neutral-600 hover:text-black font-medium transition-colors">
                     Emergency Helpline: <span className="text-black font-semibold">0422-2442200</span>

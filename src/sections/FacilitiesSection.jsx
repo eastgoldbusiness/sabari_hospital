@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { facilitiesData } from '../data/landingData';
 
 export function FacilitiesSection() {
@@ -15,6 +16,13 @@ export function FacilitiesSection() {
             DESIGNED<br />
             <span className="text-[#00A99D]">FOR BETTER CARE.</span>
           </h2>
+          <Link 
+            to="/gallery"
+            className="inline-flex items-center gap-2 text-[12px] font-bold tracking-widest uppercase text-[#00A99D] hover:text-[#0B4A8B] transition-colors"
+          >
+            <span>View Hospital Gallery</span>
+            <span>&rarr;</span>
+          </Link>
         </div>
 
         {/* Right List */}

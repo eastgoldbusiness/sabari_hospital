@@ -37,48 +37,126 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
-      "@id": "https://sabarihospital.in/#hospital",
-      "name": "Sabari Hospitals",
-      "alternateName": ["Sabari Hospital", "Sabari Multispeciality Hospital"],
-      "url": "https://sabarihospital.in/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://sabarihospital.in/logo.png"
-      },
-      "image": "https://sabarihospital.in/hero_image.png",
-      "description": "Multispeciality hospital in Coimbatore, Tamil Nadu providing comprehensive medical care in obstetrics, gynaecology, surgery, diabetes, pulmonology, critical care, and diagnostics.",
-      "telephone": "+91-422-2442200",
-      "email": "sabarimultispecialityhospital@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Coimbatore",
-        "addressRegion": "Tamil Nadu",
-        "addressCountry": "IN"
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "00:00",
-          "closes": "23:59"
+          "@type": "WebSite",
+          "@id": "https://sabarihospital.in/#website",
+          "name": "Sabari Hospitals",
+          "alternateName": ["Sabari Hospital", "Sabari Multispeciality Hospital"],
+          "url": "https://sabarihospital.in/",
+          "publisher": {
+            "@id": "https://sabarihospital.in/#hospital"
+          },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
+          "@id": "https://sabarihospital.in/#hospital",
+          "name": "Sabari Hospitals",
+          "alternateName": ["Sabari Hospital", "Sabari Multispeciality Hospital"],
+          "url": "https://sabarihospital.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sabarihospital.in/logo.png"
+          },
+          "image": "https://sabarihospital.in/hero_image.png",
+          "description": "Multispeciality hospital in Coimbatore, Tamil Nadu providing comprehensive medical care in obstetrics, gynaecology, surgery, diabetes, pulmonology, critical care, and diagnostics.",
+          "telephone": "+91-422-2442200",
+          "email": "sabarimultispecialityhospital@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Coimbatore",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ],
+          "emergencyService": true,
+          "medicalSpecialty": [
+            "Obstetrics and Gynaecology",
+            "Anaesthesiology",
+            "General Surgery",
+            "Laparoscopic Surgery",
+            "Endocrinology and Diabetes",
+            "Pulmonology",
+            "Critical Care",
+            "Physiotherapy"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/sabarihospitalcbe",
+            "https://share.google/Z20ayBa3kPQp4m8LG",
+            "https://wa.me/919443335152"
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://sabarihospital.in/#navigation",
+          "name": "Sabari Hospitals Primary Navigation",
+          "itemListElement": [
+            {
+              "@type": "SiteNavigationElement",
+              "position": 1,
+              "name": "About Us",
+              "description": "Learn about the five-decade healthcare legacy and leadership of Sabari Hospitals.",
+              "url": "https://sabarihospital.in/about/our-story"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 2,
+              "name": "Our Story",
+              "description": "The heritage, mission, and patient-first medical philosophy of Sabari Hospitals.",
+              "url": "https://sabarihospital.in/about/our-story"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 3,
+              "name": "Leadership",
+              "description": "Meet the medical leadership, directors, and clinical heads guiding Sabari Hospitals.",
+              "url": "https://sabarihospital.in/about/leadership"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 4,
+              "name": "Doctors",
+              "description": "Explore experienced medical consultants, surgeons, and specialists at Sabari Hospitals.",
+              "url": "https://sabarihospital.in/doctors"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 5,
+              "name": "Centre of Excellence",
+              "description": "Specialized clinical chapters covering medical care, surgery, obstetrics, and critical care.",
+              "url": "https://sabarihospital.in/centre-of-excellence"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 6,
+              "name": "Book Appointment",
+              "description": "Schedule a doctor consultation or appointment online at Sabari Hospitals Coimbatore.",
+              "url": "https://sabarihospital.in/book-appointment"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 7,
+              "name": "Gallery",
+              "description": "Tour the modern medical infrastructure, patient rooms, and facilities at Sabari Hospitals.",
+              "url": "https://sabarihospital.in/gallery"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 8,
+              "name": "Contact Us",
+              "description": "Get hospital directions, 24/7 emergency helpline number, and patient enquiry details.",
+              "url": "https://sabarihospital.in/contact"
+            }
+          ]
         }
-      ],
-      "emergencyService": true,
-      "medicalSpecialty": [
-        "Obstetrics and Gynaecology",
-        "Anaesthesiology",
-        "General Surgery",
-        "Laparoscopic Surgery",
-        "Endocrinology and Diabetes",
-        "Pulmonology",
-        "Critical Care",
-        "Physiotherapy"
-      ],
-      "sameAs": [
-        "https://www.instagram.com/sabarihospitalcbe",
-        "https://share.google/Z20ayBa3kPQp4m8LG",
-        "https://wa.me/919443335152"
       ]
     }
     </script>

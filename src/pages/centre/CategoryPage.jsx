@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { Footer } from '../../sections/Footer';
 import { centreCategories, subServicesData } from '../../data/centresOfExcellenceData';
 import { useAppointment } from '../../context/AppointmentContext';
+import { SEO } from '../../components/layout/SEO';
 
 export function CategoryPage() {
   const { openAppointmentModal } = useAppointment();
@@ -24,6 +25,11 @@ export function CategoryPage() {
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
+      <SEO 
+        title={`${category.title} | Centre of Excellence | Sabari Hospitals`}
+        description={category.shortDescription || `${category.title} centre of excellence at Sabari Hospitals Coimbatore.`}
+        canonicalPath={`/centre-of-excellence/${category.slug}`}
+      />
       
       {/* 1. Category Hero */}
       <section className="w-full pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-24 px-6 lg:px-16 border-b border-neutral-200 bg-white">

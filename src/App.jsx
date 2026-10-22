@@ -16,6 +16,10 @@ import { PatientExperiencePage } from './pages/about/PatientExperiencePage';
 import { Careers } from './pages/about/Careers';
 import { ContactPage } from './pages/ContactPage';
 import { GalleryPage } from './pages/GalleryPage';
+import { BookAppointmentPage } from './pages/BookAppointmentPage';
+import { CentresLanding } from './pages/centre/CentresLanding';
+import { CategoryPage } from './pages/centre/CategoryPage';
+import { ServicePage } from './pages/centre/ServicePage';
 import { PrivacyPolicy } from './pages/legal/PrivacyPolicy';
 import { TermsOfService } from './pages/legal/TermsOfService';
 
@@ -57,7 +61,9 @@ function App() {
         <Route path="/doctors/:id" element={<DoctorProfile />} />
         <Route path="/doctor/:id" element={<DoctorProfile />} />
         
-        {/* About Us Destination Pages */}
+        {/* About Us Destination Pages & Aliases */}
+        <Route path="/about" element={<Navigate to="/about/our-story" replace />} />
+        <Route path="/about-us" element={<Navigate to="/about/our-story" replace />} />
         <Route path="/about/our-story" element={<OurStory />} />
         <Route path="/about/leadership" element={<Leadership />} />
         <Route path="/about/why-sabari" element={<WhySabari />} />
@@ -65,30 +71,31 @@ function App() {
         <Route path="/about/patient-experience" element={<PatientExperiencePage />} />
         <Route path="/about/careers" element={<Careers />} />
 
-        {/* Centre of Excellence - Removed specific pages, redirecting */}
-        <Route path="/centre-of-excellence" element={<Navigate to="/#centres-of-excellence" replace />} />
-        <Route path="/centre-of-excellence/*" element={<Navigate to="/contact" replace />} />
+        {/* Centres of Excellence Pages */}
+        <Route path="/centre-of-excellence" element={<CentresLanding />} />
+        <Route path="/centre-of-excellence/:categorySlug" element={<CategoryPage />} />
+        <Route path="/centre-of-excellence/:categorySlug/:serviceSlug" element={<ServicePage />} />
+        <Route path="/centres-of-excellence" element={<Navigate to="/centre-of-excellence" replace />} />
 
-        {/* Gallery Experience */}
+        {/* Gallery & Facilities */}
         <Route path="/gallery" element={<GalleryPage />} />
-
-        {/* Facilities redirect to Gallery */}
         <Route path="/facilities" element={<Navigate to="/gallery" replace />} />
         <Route path="/facilities/*" element={<Navigate to="/gallery" replace />} />
 
         {/* Contact Us Experience */}
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
+
+        {/* Book Appointment Experience */}
+        <Route path="/book-appointment" element={<BookAppointmentPage />} />
+        <Route path="/appointment" element={<Navigate to="/book-appointment" replace />} />
+        <Route path="/appointments" element={<Navigate to="/book-appointment" replace />} />
 
         {/* Legal & Compliance Pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/terms" element={<Navigate to="/terms-of-service" replace />} />
-
-        {/* Book Appointment routes redirecting to /contact */}
-        <Route path="/book-appointment" element={<Navigate to="/contact" replace />} />
-        <Route path="/appointment" element={<Navigate to="/contact" replace />} />
-        <Route path="/appointments" element={<Navigate to="/contact" replace />} />
       </Routes>
       </AppointmentProvider>
     </Router>

@@ -15,7 +15,7 @@ export function CentresOfExcellence() {
           <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#00A99D] mb-6 sm:mb-8 block">
             EXPERTISE
           </span>
-          <Link to="/contact" className="hover:opacity-80 transition-opacity">
+          <Link to="/centre-of-excellence" className="hover:opacity-80 transition-opacity">
             <h2 className="text-[36px] sm:text-[44px] lg:text-[56px] font-medium leading-[1.05] tracking-[-0.02em] text-[#0B4A8B] mb-6 sm:mb-8">
               CENTRE<br />
               OF EXCELLENCE
@@ -25,7 +25,7 @@ export function CentresOfExcellence() {
             Specialised care led by experienced clinicians and supported by advanced medical technology.
           </p>
           <Link 
-            to="/contact"
+            to="/centre-of-excellence"
             className="inline-flex items-center gap-2 text-[12px] font-bold tracking-widest uppercase text-[#00A99D] hover:text-[#0B4A8B] transition-colors mb-8 lg:mb-16"
           >
             <span>Explore All Centres</span>
@@ -51,7 +51,7 @@ export function CentresOfExcellence() {
                   {centresData[hoveredIndex].services?.map((service, idx) => (
                     <Link 
                       key={idx} 
-                      to={`/contact?subject=${encodeURIComponent(service)}`}
+                      to={`/centre-of-excellence/${centresData[hoveredIndex].id}`}
                       className="flex items-center gap-5 group cursor-pointer"
                     >
                       <span className="text-[13px] text-neutral-300 font-mono transition-colors group-hover:text-[#00A99D]">
@@ -74,7 +74,7 @@ export function CentresOfExcellence() {
             {centresData.map((item, idx) => (
               <Link 
                 key={item.id}
-                to={`/contact?subject=${encodeURIComponent(item.title)}`}
+                to={`/centre-of-excellence/${item.id}`}
                 className="group relative flex flex-col py-6 border-b border-neutral-200 cursor-pointer transition-colors duration-200"
                 onMouseEnter={() => setHoveredIndex(idx)}
               >

@@ -98,6 +98,58 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Book Appointment -->
+  <url>
+    <loc>https://sabarihospital.in/book-appointment</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Centre of Excellence -->
+  <url>
+    <loc>https://sabarihospital.in/centre-of-excellence</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sabarihospital.in/centre-of-excellence/medical-care</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sabarihospital.in/centre-of-excellence/surgical-care</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sabarihospital.in/centre-of-excellence/womens-health</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sabarihospital.in/centre-of-excellence/cardiac-care</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sabarihospital.in/centre-of-excellence/critical-care</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sabarihospital.in/centre-of-excellence/diagnostics</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Facilities & Gallery -->
   <url>
     <loc>https://sabarihospital.in/gallery</loc>
