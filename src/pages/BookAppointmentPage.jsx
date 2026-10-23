@@ -153,15 +153,15 @@ export function BookAppointmentPage() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Book an Appointment | Sabari Hospitals Coimbatore"
-        description="Book a doctor consultation or appointment at Sabari Hospitals Coimbatore. Schedule visits across gynaecology, surgery, diabetes, pulmonology, and critical care."
+        title="Book Hospital Appointment in Coimbatore | Sabari Hospitals"
+        description="Book a hospital appointment in Coimbatore at Sabari Hospitals. Schedule outpatient doctor consultations across obstetrics, general surgery, diabetes & pulmonology."
         canonicalPath="/book-appointment"
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
           "@id": "https://sabarihospital.in/book-appointment#webpage",
-          "name": "Book an Appointment - Sabari Hospitals",
-          "description": "Online appointment request and doctor consultation scheduling for Sabari Hospitals in Coimbatore.",
+          "name": "Book Hospital Appointment in Coimbatore - Sabari Hospitals",
+          "description": "Online hospital appointment request and doctor consultation booking for Sabari Hospitals in Coimbatore.",
           "url": "https://sabarihospital.in/book-appointment",
           "mainEntity": {
             "@type": "Hospital",

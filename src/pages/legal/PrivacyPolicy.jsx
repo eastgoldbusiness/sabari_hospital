@@ -214,7 +214,7 @@ export function PrivacyPolicy() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Privacy Policy | Sabari Hospitals"
+        title="Privacy Policy | Sabari Hospitals Coimbatore"
         description="Read the privacy policy of Sabari Hospitals regarding patient data confidentiality, medical records protection, and compliance with Indian healthcare regulations."
         canonicalPath="/privacy-policy"
       />

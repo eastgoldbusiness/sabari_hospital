@@ -42,7 +42,7 @@ export function WhySabari() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Why Choose Sabari Hospitals | Patient-Centred Healthcare"
+        title="Why Choose Sabari Hospitals | Private Healthcare in Coimbatore"
         description="Discover why families trust Sabari Hospitals in Coimbatore: personalized medical attention, senior clinical specialists, modern infrastructure, and transparent care."
         canonicalPath="/about/why-sabari"
       />

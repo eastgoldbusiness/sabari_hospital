@@ -19,8 +19,8 @@ export function CentresLanding() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Centres of Excellence | Sabari Hospitals"
-        description="Explore specialized clinical departments and centres of excellence at Sabari Hospitals Coimbatore: medical care, surgical services, women's health, critical care, and diagnostics."
+        title="Centres of Excellence | Multispeciality Hospital in Coimbatore | Sabari Hospitals"
+        description="Explore Centres of Excellence at Sabari Hospitals Coimbatore: medical care, general & laparoscopic surgery, women's health, critical care, cardiac care & diagnostics."
         canonicalPath="/centre-of-excellence"
       />
       

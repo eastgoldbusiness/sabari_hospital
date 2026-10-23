@@ -105,12 +105,12 @@ export function Footer() {
           <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">Centres of Excellence</p>
           <ul className="space-y-2.5">
             <li><Link to="/centre-of-excellence" className="text-white/70 hover:text-white transition-colors">All Centres Overview</Link></li>
-            <li><Link to="/centre-of-excellence/medical-care" className="text-white/70 hover:text-white transition-colors">Medical Care</Link></li>
-            <li><Link to="/centre-of-excellence/surgical-care" className="text-white/70 hover:text-white transition-colors">Surgical Care</Link></li>
-            <li><Link to="/centre-of-excellence/womens-health" className="text-white/70 hover:text-white transition-colors">Women's Health</Link></li>
-            <li><Link to="/centre-of-excellence/cardiac-care" className="text-white/70 hover:text-white transition-colors">Cardiac Care</Link></li>
-            <li><Link to="/centre-of-excellence/critical-care" className="text-white/70 hover:text-white transition-colors">Critical Care</Link></li>
-            <li><Link to="/centre-of-excellence/diagnostics" className="text-white/70 hover:text-white transition-colors">Diagnostics & Therapy</Link></li>
+            <li><Link to="/centre-of-excellence/medical-care" className="text-white/70 hover:text-white transition-colors">Medical &amp; Diabetes Care</Link></li>
+            <li><Link to="/centre-of-excellence/surgical-care" className="text-white/70 hover:text-white transition-colors">General &amp; Laparoscopic Surgery</Link></li>
+            <li><Link to="/centre-of-excellence/womens-health" className="text-white/70 hover:text-white transition-colors">Obstetrics &amp; Gynaecology</Link></li>
+            <li><Link to="/centre-of-excellence/cardiac-care" className="text-white/70 hover:text-white transition-colors">Cardiac Services</Link></li>
+            <li><Link to="/centre-of-excellence/critical-care" className="text-white/70 hover:text-white transition-colors">Critical Care &amp; ICU</Link></li>
+            <li><Link to="/centre-of-excellence/diagnostics" className="text-white/70 hover:text-white transition-colors">Diagnostics &amp; Physiotherapy</Link></li>
           </ul>
         </div>
 

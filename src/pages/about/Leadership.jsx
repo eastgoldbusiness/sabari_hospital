@@ -50,7 +50,7 @@ export function Leadership() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Hospital Leadership & Governance | Sabari Hospitals"
+        title="Hospital Leadership & Medical Directors | Sabari Hospitals Coimbatore"
         description="Meet the clinical and executive leadership of Sabari Hospitals Coimbatore, guided by Dr. Saravana Kumar S and Founder Dr. Mangaleswari."
         canonicalPath="/about/leadership"
       />

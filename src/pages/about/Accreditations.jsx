@@ -41,8 +41,8 @@ export function Accreditations() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Clinical Standards & Safety Accreditations | Sabari Hospitals"
-        description="Explore patient safety protocols, surgical quality checklists, and sterilization standards upheld at Sabari Hospitals Coimbatore."
+        title="Clinical Standards & Safety Accreditations | Sabari Hospitals Coimbatore"
+        description="Explore patient safety protocols, surgical quality checklists, and sterilization standards upheld at Sabari Hospitals in Coimbatore."
         canonicalPath="/about/accreditations"
       />
       

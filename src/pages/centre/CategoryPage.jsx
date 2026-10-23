@@ -23,12 +23,31 @@ export function CategoryPage() {
   const prevCategory = categoryIndex > 0 ? centreCategories[categoryIndex - 1] : centreCategories[centreCategories.length - 1];
   const nextCategory = categoryIndex < centreCategories.length - 1 ? centreCategories[categoryIndex + 1] : centreCategories[0];
 
+  const categorySchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `https://sabarihospital.in/centre-of-excellence/${category.slug}#webpage`,
+    "name": category.seoTitle || `${category.title} | Sabari Hospitals Coimbatore`,
+    "description": category.seoDescription || category.shortDescription,
+    "url": `https://sabarihospital.in/centre-of-excellence/${category.slug}`,
+    "about": {
+      "@type": "MedicalSpecialty",
+      "name": category.title
+    },
+    "publisher": {
+      "@type": "Hospital",
+      "name": "Sabari Hospitals",
+      "url": "https://sabarihospital.in/"
+    }
+  };
+
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title={`${category.title} | Centre of Excellence | Sabari Hospitals`}
-        description={category.shortDescription || `${category.title} centre of excellence at Sabari Hospitals Coimbatore.`}
+        title={category.seoTitle || `${category.title} | Centre of Excellence | Sabari Hospitals Coimbatore`}
+        description={category.seoDescription || category.shortDescription || `${category.title} centre of excellence at Sabari Hospitals Coimbatore.`}
         canonicalPath={`/centre-of-excellence/${category.slug}`}
+        schema={categorySchema}
       />
       
       {/* 1. Category Hero */}

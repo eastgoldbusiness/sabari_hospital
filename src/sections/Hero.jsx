@@ -35,7 +35,7 @@ export function Hero() {
           className="w-full lg:w-[45%] h-full flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-5 sm:px-8 lg:px-16 pt-8 pb-12 lg:py-0 z-10"
         >
           <span className="text-[12px] sm:text-[14px] font-bold tracking-[0.22em] uppercase text-[#00A99D] mb-3 sm:mb-6 block text-center lg:text-left">
-            MULTI SPECIALITY HOSPITAL
+            MULTISPECIALITY HOSPITAL IN COIMBATORE
           </span>
           <h1 className="text-[36px] xs:text-[42px] sm:text-[58px] lg:text-[76px] xl:text-[88px] font-medium leading-[1.0] sm:leading-[0.98] tracking-[-0.03em] text-[#0B4A8B] mb-4 sm:mb-8 text-center lg:text-left">
             YOUR HEALTH<br />
@@ -49,7 +49,7 @@ export function Hero() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-6 w-full sm:w-auto mb-8 lg:mb-0">
             <Link 
-              to="/contact" 
+              to="/book-appointment" 
               className="inline-flex items-center justify-center gap-2 bg-[#0B4A8B] text-white text-[13px] font-semibold tracking-[0.06em] uppercase px-6 sm:px-8 py-3.5 sm:py-4 border border-[#0B4A8B] hover:bg-[#00A99D] hover:border-[#00A99D] transition-all duration-300 w-full sm:w-auto text-center shadow-sm whitespace-nowrap"
             >
               <span>BOOK AN APPOINTMENT</span>
@@ -70,7 +70,7 @@ export function Hero() {
                 <motion.img 
                   key={currentIndex}
                   src={HERO_IMAGES[currentIndex]} 
-                  alt={`Sabari Hospital slide ${currentIndex + 1}`}
+                  alt={`Sabari Multispeciality Hospital in Coimbatore slide ${currentIndex + 1}`}
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
@@ -112,7 +112,7 @@ export function Hero() {
             <motion.img 
               key={currentIndex}
               src={HERO_IMAGES[currentIndex]} 
-              alt={`Sabari Hospital slide ${currentIndex + 1}`}
+              alt={`Sabari Multispeciality Hospital in Coimbatore slide ${currentIndex + 1}`}
               initial={{ opacity: 0, scale: 1.03 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}

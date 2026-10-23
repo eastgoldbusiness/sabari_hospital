@@ -48,20 +48,23 @@ export function CentresOfExcellence() {
                   {centresData[hoveredIndex].title} &mdash; SERVICES
                 </h3>
                 <div className="flex flex-col gap-6">
-                  {centresData[hoveredIndex].services?.map((service, idx) => (
-                    <Link 
-                      key={idx} 
-                      to={`/centre-of-excellence/${centresData[hoveredIndex].id}`}
-                      className="flex items-center gap-5 group cursor-pointer"
-                    >
-                      <span className="text-[13px] text-neutral-300 font-mono transition-colors group-hover:text-[#00A99D]">
-                        0{idx + 1}
-                      </span>
-                      <span className="text-[22px] lg:text-[26px] font-medium tracking-[-0.01em] text-neutral-600 transition-colors group-hover:text-[#0B4A8B]">
-                        {service}
-                      </span>
-                    </Link>
-                  ))}
+                  {centresData[hoveredIndex].services?.map((service, idx) => {
+                    const subSlug = service.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+                    return (
+                      <Link 
+                        key={idx} 
+                        to={`/centre-of-excellence/${centresData[hoveredIndex].id}/${subSlug}`}
+                        className="flex items-center gap-5 group cursor-pointer"
+                      >
+                        <span className="text-[13px] text-neutral-300 font-mono transition-colors group-hover:text-[#00A99D]">
+                          0{idx + 1}
+                        </span>
+                        <span className="text-[22px] lg:text-[26px] font-medium tracking-[-0.01em] text-neutral-600 transition-colors group-hover:text-[#0B4A8B]">
+                          {service}
+                        </span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </motion.div>
             </AnimatePresence>

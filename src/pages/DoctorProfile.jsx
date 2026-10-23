@@ -57,7 +57,7 @@ export function DoctorProfile() {
     );
   }
 
-  const doctorTitle = `${doctor.name} - ${doctor.role || doctor.speciality} | Sabari Hospitals`;
+  const doctorTitle = `${doctor.name} - ${doctor.role || doctor.speciality} in Coimbatore | Sabari Hospitals`;
   const doctorSnippet = doctor.bio && doctor.bio.length > 140 ? `${doctor.bio.slice(0, 140)}...` : (doctor.bio || '');
   const doctorDescription = `Consult ${doctor.name}, ${doctor.role || doctor.speciality} at Sabari Hospitals Coimbatore. ${doctorSnippet}`;
 

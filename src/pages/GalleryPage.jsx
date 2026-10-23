@@ -106,8 +106,8 @@ export function GalleryPage() {
   return (
     <div className="w-full min-h-screen bg-[#111827] text-white flex flex-col justify-between selection:bg-neutral-800">
       <SEO 
-        title="Hospital Facilities & Photo Gallery | Sabari Hospitals"
-        description="Explore authentic photographs of Sabari Hospitals Coimbatore: our clinical facilities, operating suites, outpatient consultation rooms, pharmacy, and medical team."
+        title="Hospital Facilities & Photo Gallery | Sabari Hospitals Coimbatore"
+        description="Explore authentic photographs of Sabari Hospitals in Coimbatore: clinical facilities, operating suites, outpatient consultation rooms, pharmacy, and medical specialists."
         canonicalPath="/gallery"
       />
       
@@ -116,6 +116,8 @@ export function GalleryPage() {
         Takes full height below navbar (88px desktop / 72px mobile)
       */}
       <section className="relative w-full h-[calc(100dvh-72px)] sm:h-[calc(100vh-88px)] min-h-[600px] mt-[72px] sm:mt-[88px] overflow-hidden bg-[#111827]">
+        {/* Accessible Primary Page Heading for SEO Audit & Screen Readers */}
+        <h1 className="sr-only">Hospital Facilities &amp; Photo Gallery | Sabari Hospitals Coimbatore</h1>
         
         {/* Ambient Top Subtle Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#00A99D]/10 rounded-full blur-[140px] pointer-events-none" />

@@ -3,7 +3,6 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { Footer } from '../../sections/Footer';
 import { 
   subServicesData, 
-  centreCategories, 
   orderedSubServices 
 } from '../../data/centresOfExcellenceData';
 import { useAppointment } from '../../context/AppointmentContext';
@@ -40,12 +39,32 @@ export function ServicePage() {
   const prevServiceData = prevItem ? subServicesData[`${prevItem.categorySlug}/${prevItem.serviceSlug}`] : null;
   const nextServiceData = nextItem ? subServicesData[`${nextItem.categorySlug}/${nextItem.serviceSlug}`] : null;
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `https://sabarihospital.in/centre-of-excellence/${service.categorySlug}/${service.slug}#webpage`,
+    "name": service.seoTitle || `${service.title} | Sabari Hospitals Coimbatore`,
+    "description": service.seoDescription || service.introduction,
+    "url": `https://sabarihospital.in/centre-of-excellence/${service.categorySlug}/${service.slug}`,
+    "about": {
+      "@type": "MedicalSpecialty",
+      "name": service.title
+    },
+    "publisher": {
+      "@type": "Hospital",
+      "name": "Sabari Hospitals",
+      "url": "https://sabarihospital.in/"
+    }
+  };
+
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title={`${service.title} | Sabari Hospitals Coimbatore`}
-        description={service.introduction || `${service.title} services at Sabari Hospitals Coimbatore.`}
+        title={service.seoTitle || `${service.title} | Sabari Hospitals Coimbatore`}
+        description={service.seoDescription || service.introduction || `${service.title} services at Sabari Hospitals Coimbatore.`}
         canonicalPath={`/centre-of-excellence/${service.categorySlug}/${service.slug}`}
+        image={service.heroImage}
+        schema={serviceSchema}
       />
       
       {/* 1. Service Hero (40-50% image, large typography) */}

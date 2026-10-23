@@ -47,7 +47,7 @@ export function PatientExperiencePage() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Patient Experience & Hospital Journey | Sabari Hospitals"
+        title="Patient Care Journey & Experience | Sabari Hospitals Coimbatore"
         description="Understand the patient care journey at Sabari Hospitals Coimbatore: from front-desk arrival and listening consultations to recovery and post-discharge follow-up."
         canonicalPath="/about/patient-experience"
       />

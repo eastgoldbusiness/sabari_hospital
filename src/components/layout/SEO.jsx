@@ -24,7 +24,7 @@ function setCanonical(href) {
 }
 
 export function SEO({
-  title = "Sabari Hospitals | Multispeciality Hospital",
+  title = "Sabari Hospitals | Multispeciality Hospital in Coimbatore",
   description = "Sabari Hospitals is a leading multispeciality hospital in Coimbatore, Tamil Nadu, offering 50+ years of compassionate care across obstetrics, gynaecology, surgery, diabetes, and critical care.",
   canonicalPath = "",
   type = "website",

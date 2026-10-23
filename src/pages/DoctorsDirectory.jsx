@@ -68,8 +68,8 @@ export function DoctorsDirectory() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200 selection:text-black">
       <SEO 
-        title="Our Doctors & Medical Specialists | Sabari Hospitals"
-        description="Meet the team of experienced medical consultants and surgeons at Sabari Hospitals in Coimbatore, specializing in anaesthesiology, gynaecology, diabetes, pulmonology, and surgery."
+        title="Doctors in Coimbatore | Medical Specialists & Surgeons | Sabari Hospitals"
+        description="Consult experienced doctors in Coimbatore at Sabari Hospitals. Find verified specialists in obstetrics, general surgery, diabetology, pulmonology & physiotherapy."
         canonicalPath="/doctors"
       />
       
@@ -78,13 +78,16 @@ export function DoctorsDirectory() {
         <div className="max-w-[1600px] w-full mx-auto">
           
           <div className="flex flex-col w-full">
+            <span className="text-[12px] font-mono font-semibold tracking-[0.25em] uppercase text-neutral-400 mb-3 block">
+              DOCTORS IN COIMBATORE
+            </span>
             <h1 className="text-[32px] sm:text-[54px] md:text-[68px] lg:text-[84px] font-medium leading-[1.05] tracking-[-0.03em] text-black mb-6 whitespace-normal sm:whitespace-nowrap break-words">
               THE MINDS BEHIND SABARI.
             </h1>
 
             <div className="pt-4 border-t border-neutral-200">
               <p className="text-[15px] sm:text-[18px] lg:text-[19px] text-neutral-600 leading-relaxed font-light md:whitespace-nowrap">
-                Experienced clinicians, specialised expertise and a shared commitment to patient care.
+                Experienced clinicians, specialized surgeons and doctors in Coimbatore committed to patient care.
               </p>
             </div>
           </div>

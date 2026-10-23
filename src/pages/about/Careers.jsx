@@ -32,7 +32,7 @@ export function Careers() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Careers & Healthcare Opportunities | Sabari Hospitals"
+        title="Healthcare Careers & Job Opportunities | Sabari Hospitals Coimbatore"
         description="Join the healthcare team at Sabari Hospitals Coimbatore. Explore career opportunities for doctors, nursing professionals, technicians, and administrative staff."
         canonicalPath="/about/careers"
       />

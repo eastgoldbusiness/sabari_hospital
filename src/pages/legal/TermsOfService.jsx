@@ -170,7 +170,7 @@ export function TermsOfService() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Terms of Service & Medical Disclaimer | Sabari Hospitals"
+        title="Terms of Service & Medical Disclaimer | Sabari Hospitals Coimbatore"
         description="Review terms of service, website terms of use, and medical disclaimers for Sabari Hospitals in Coimbatore, Tamil Nadu."
         canonicalPath="/terms-of-service"
       />
