@@ -48,9 +48,9 @@ export function Footer() {
             </a>
           </div>
           <div>
-            <p className="text-white/40 font-sans tracking-[0.16em] uppercase text-[11px] font-medium mb-1">Location</p>
-            <p className="text-white/80 leading-relaxed font-light text-base sm:text-lg">
-              Coimbatore, Tamil Nadu<br/>India
+            <p className="text-white/40 font-sans tracking-[0.16em] uppercase text-[11px] font-medium mb-1">Campus Location</p>
+            <p className="text-white/80 leading-relaxed font-light text-[15px] sm:text-base">
+              167/1, NSR Road, Saibaba Colony,<br/>Coimbatore, Tamil Nadu 641011
             </p>
           </div>
           <div>
@@ -86,52 +86,34 @@ export function Footer() {
       </div>
 
       {/* Crawlable Navigation Matrix for Sitelink Hierarchy */}
-      <div className="max-w-[1600px] w-full mx-auto py-12 sm:py-16 border-b border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-8 text-[13px]">
+      <div className="max-w-[1600px] w-full mx-auto py-12 sm:py-16 border-b border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-8 text-[13px]">
         {/* Column 1: About Us */}
         <div>
           <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">About Sabari</p>
           <ul className="space-y-2.5">
             <li><Link to="/about/our-story" className="text-white/70 hover:text-white transition-colors">Our Story</Link></li>
             <li><Link to="/about/leadership" className="text-white/70 hover:text-white transition-colors">Leadership</Link></li>
-            <li><Link to="/about/why-sabari" className="text-white/70 hover:text-white transition-colors">Why Sabari</Link></li>
-            <li><Link to="/about/accreditations" className="text-white/70 hover:text-white transition-colors">Accreditations</Link></li>
-            <li><Link to="/about/patient-experience" className="text-white/70 hover:text-white transition-colors">Patient Experience</Link></li>
-            <li><Link to="/about/careers" className="text-white/70 hover:text-white transition-colors">Careers</Link></li>
           </ul>
         </div>
 
-        {/* Column 2: Centres of Excellence */}
-        <div>
-          <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">Centres of Excellence</p>
-          <ul className="space-y-2.5">
-            <li><Link to="/centre-of-excellence" className="text-white/70 hover:text-white transition-colors">All Centres Overview</Link></li>
-            <li><Link to="/centre-of-excellence/medical-care" className="text-white/70 hover:text-white transition-colors">Medical &amp; Diabetes Care</Link></li>
-            <li><Link to="/centre-of-excellence/surgical-care" className="text-white/70 hover:text-white transition-colors">General &amp; Laparoscopic Surgery</Link></li>
-            <li><Link to="/centre-of-excellence/womens-health" className="text-white/70 hover:text-white transition-colors">Obstetrics &amp; Gynaecology</Link></li>
-            <li><Link to="/centre-of-excellence/cardiac-care" className="text-white/70 hover:text-white transition-colors">Cardiac Services</Link></li>
-            <li><Link to="/centre-of-excellence/critical-care" className="text-white/70 hover:text-white transition-colors">Critical Care &amp; ICU</Link></li>
-            <li><Link to="/centre-of-excellence/diagnostics" className="text-white/70 hover:text-white transition-colors">Diagnostics &amp; Physiotherapy</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 3: Patient Care */}
+        {/* Column 2: Patient Care */}
         <div>
           <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">Patient Care</p>
           <ul className="space-y-2.5">
             <li><Link to="/doctors" className="text-white/70 hover:text-white transition-colors">Doctors Directory</Link></li>
             <li><Link to="/book-appointment" className="text-white/70 hover:text-white transition-colors">Book an Appointment</Link></li>
-            <li><Link to="/gallery" className="text-white/70 hover:text-white transition-colors">Hospital Gallery & Facilities</Link></li>
+            <li><Link to="/gallery" className="text-white/70 hover:text-white transition-colors">Hospital Gallery &amp; Facilities</Link></li>
             <li><Link to="/contact" className="text-white/70 hover:text-white transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
-        {/* Column 4: Quick Contact */}
+        {/* Column 3: Emergency & Hospital */}
         <div>
-          <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">Emergency & Hospital</p>
+          <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">Emergency &amp; Hospital</p>
           <ul className="space-y-2.5 text-white/70">
             <li>Emergency: <a href="tel:+914222442200" className="text-white font-medium hover:underline">0422-2442200</a></li>
             <li>WhatsApp: <a href="https://wa.me/919443335152" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:underline">+91 94433 35152</a></li>
-            <li className="pt-2 text-white/50 text-[12px] leading-relaxed">Multispeciality Hospital in Coimbatore, Tamil Nadu, India.</li>
+            <li className="pt-2 text-white/50 text-[12px] leading-relaxed">Multispeciality Hospital in Sai Baba Colony, Coimbatore, Tamil Nadu, India.</li>
           </ul>
         </div>
       </div>

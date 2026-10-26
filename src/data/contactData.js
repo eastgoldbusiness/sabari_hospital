@@ -18,31 +18,31 @@ export const contactData = {
     channels: [
       {
         label: "PHONE",
-        primary: "+1 (800) 123-4567",
+        primary: "0422-2442200",
         secondary: "Mon – Sat, 8:00 AM – 8:00 PM IST",
         action: "CALL US →",
-        href: "tel:+18001234567"
+        href: "tel:+914222442200"
       },
       {
         label: "EMAIL",
-        primary: "care@sabarihospitals.com",
-        secondary: "Responses within 2 business hours",
+        primary: "sabarimultispecialityhospital@gmail.com",
+        secondary: "Direct patient & administrative enquiries",
         action: "EMAIL US →",
-        href: "mailto:care@sabarihospitals.com"
+        href: "mailto:sabarimultispecialityhospital@gmail.com"
       },
       {
         label: "CAMPUS ADDRESS",
-        primary: "123 Medical Boulevard",
-        secondary: "Healthcare District, City, ST 12345",
+        primary: "167/1, NSR Road, Saibaba Colony",
+        secondary: "Coimbatore, Tamil Nadu — 641011",
         action: "GET DIRECTIONS →",
-        href: "#find-sabari"
+        href: "https://www.google.com/maps/search/?api=1&query=Sabari+Hospital+167%2F1+NSR+Road+Saibaba+Colony+Coimbatore+641011"
       },
       {
         label: "24/7 EMERGENCY",
-        primary: "+1 (800) 123-4567",
-        secondary: "Dedicated trauma resuscitation desk",
+        primary: "0422-2442200",
+        secondary: "Dedicated emergency & trauma response desk",
         action: "EMERGENCY HOTLINE →",
-        href: "tel:+18001234567",
+        href: "tel:+914222442200",
         isEmergency: true
       }
     ]
@@ -79,28 +79,28 @@ export const contactData = {
 
   location: {
     title: "FIND SABARI",
-    address: "123 Medical Boulevard, Healthcare District, City, ST 12345",
-    landmark: "Directly accessible via Main Arterial Road, Gate 1 & 2",
+    address: "167/1, NSR Road, Saibaba Colony, Coimbatore, Tamil Nadu — 641011",
+    landmark: "Opposite Church Road, Near Indian Overseas Bank, Saibaba Colony",
     timings: [
       { label: "Outpatient Services (OPD)", hours: "08:00 AM – 08:00 PM (Monday – Saturday)" },
       { label: "Emergency & Trauma Bay", hours: "24 Hours / 7 Days a Week" },
       { label: "Diagnostic Imaging & Labs", hours: "24 Hours Service" },
       { label: "Inpatient Visiting Hours", hours: "11:00 AM – 01:00 PM & 05:00 PM – 07:00 PM" }
     ],
-    parking: "Complimentary underground and surface valet parking available for patients and attendants at Gate 1."
+    parking: "Patient and attendant parking available on-site with ground-level wheelchair accessibility."
   },
 
   emergency: {
     title: "NEED IMMEDIATE CARE?",
-    supportingText: "For medical emergencies, contact our emergency team or visit the hospital immediately.",
-    phone: "+1 (800) 123-4567",
+    supportingText: "For acute medical emergencies, contact our 24/7 helpline immediately or proceed to our emergency triage on NSR Road.",
+    phone: "0422-2442200",
     actionText: "EMERGENCY CONTACT →"
   },
 
   careers: {
     title: "WORK WITH SABARI",
     text: "Explore opportunities to contribute to compassionate, high-quality healthcare.",
-    ctaText: "VIEW CAREERS →",
-    href: "/about/careers"
+    ctaText: "CONTACT US →",
+    href: "/contact"
   }
 };

@@ -110,14 +110,14 @@ export function PatientSupport({ data, onTriggerFormSubject }) {
                   </p>
                   <div className="p-4 bg-neutral-50 border border-neutral-200 font-mono text-[12px] space-y-2 text-neutral-800">
                     <div>Direct Extension: <span className="font-semibold text-black">Ext. 204 / 205</span></div>
-                    <div>Direct Line: <span className="font-semibold text-black">+1 (800) 123-4567</span></div>
+                    <div>Direct Line: <span className="font-semibold text-black">0422-2442200</span></div>
                     <div>Hours: <span className="font-semibold text-black">24 Hours / 7 Days Desk</span></div>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-neutral-200">
                   <a
-                    href="tel:+18001234567"
+                    href="tel:+914222442200"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-[12px] font-mono uppercase font-semibold hover:bg-neutral-800 transition-colors"
                   >
                     <span>Call Concierge Now</span>

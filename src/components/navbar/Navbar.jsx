@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ChevronDown, Calendar, Phone, ArrowRight, Menu } from 'lucide-react';
+import { X, ChevronDown, Phone, Menu } from 'lucide-react';
 import { NavItem } from './NavItem';
 import { SimpleDropdown } from './SimpleDropdown';
 import { useNavbarTheme } from '../../hooks/useNavbarTheme';
 import { aboutSimpleData } from '../../data/navigationData';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAppointment } from '../../context/AppointmentContext';
 
 export function Navbar() {
@@ -17,7 +17,6 @@ export function Navbar() {
   const { openAppointmentModal } = useAppointment();
   const navRef = useRef(null);
   const location = useLocation();
-  const navigate = useNavigate();
   const isAboutActive = location.pathname.startsWith('/about');
   const isGalleryActive = location.pathname.startsWith('/gallery');
   const isContactActive = location.pathname.startsWith('/contact');
@@ -63,43 +62,11 @@ export function Navbar() {
     };
   }, []);
 
-  // Handle hash scrolling when navigating to /#centres-of-excellence
-  useEffect(() => {
-    if (location.pathname === '/' && location.hash === '#centres-of-excellence') {
-      const timer = setTimeout(() => {
-        const el = document.getElementById('centres-of-excellence');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [location.pathname, location.hash]);
-
-  const handleScrollToCentres = (e) => {
-    if (e) e.preventDefault();
-    setActiveMenu(null);
-    if (location.pathname === '/') {
-      const element = document.getElementById('centres-of-excellence');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      navigate('/#centres-of-excellence');
-    }
-  };
 
   const toggleMobileSubmenu = (section) => {
     setMobileSubmenu(prev => (prev === section ? null : section));
   };
 
-  const toggleMenu = (menuName) => {
-    if (activeMenu === menuName) {
-      setActiveMenu(null);
-    } else {
-      setActiveMenu(menuName);
-    }
-  };
 
   const handleLogoClick = () => {
     setActiveMenu(null);
@@ -144,15 +111,6 @@ export function Navbar() {
             />
           </div>
           
-          {/* 4. Centre of Excellence */}
-          <div className="h-full flex items-center" onMouseEnter={() => setActiveMenu(null)}>
-            <NavItem 
-              label="Centre of Excellence" 
-              href="/centre-of-excellence"
-              isActive={location.pathname.startsWith('/centre-of-excellence')}
-              theme={theme}
-            />
-          </div>
 
           {/* 5. Gallery */}
           <div className="h-full flex items-center" onMouseEnter={() => setActiveMenu(null)}>
@@ -291,34 +249,6 @@ export function Navbar() {
                         >
                           Leadership
                         </Link>
-                        <Link 
-                          to="/about/why-sabari" 
-                          onClick={() => setMobileMenuOpen(false)} 
-                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
-                        >
-                          Why Sabari
-                        </Link>
-                        <Link 
-                          to="/about/accreditations" 
-                          onClick={() => setMobileMenuOpen(false)} 
-                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
-                        >
-                          Accreditations
-                        </Link>
-                        <Link 
-                          to="/about/patient-experience" 
-                          onClick={() => setMobileMenuOpen(false)} 
-                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
-                        >
-                          Patient Experience
-                        </Link>
-                        <Link 
-                          to="/about/careers" 
-                          onClick={() => setMobileMenuOpen(false)} 
-                          className="text-[16px] text-neutral-600 hover:text-black py-1 transition-colors"
-                        >
-                          Careers
-                        </Link>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -337,16 +267,6 @@ export function Navbar() {
 
                 <div className="h-[1px] bg-neutral-100" />
                 
-                {/* Centre of Excellence */}
-                <Link 
-                  to="/centre-of-excellence"
-                  onClick={() => setMobileMenuOpen(false)} 
-                  className="text-[20px] font-medium text-black py-2 hover:text-neutral-600 transition-colors"
-                >
-                  Centre of Excellence
-                </Link>
-
-                <div className="h-[1px] bg-neutral-100" />
 
                 {/* Gallery */}
                 <Link 

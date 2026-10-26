@@ -25,42 +25,45 @@ export function Hero() {
   return (
     <section 
       data-nav-theme="light" 
-      className="relative w-full bg-white min-h-[calc(100vh-88px)] lg:h-[calc(100vh-88px)] mt-[72px] sm:mt-[88px] overflow-hidden"
+      className="relative w-full bg-white min-h-[calc(100vh-88px)] lg:min-h-[580px] lg:h-[calc(100vh-88px)] mt-[72px] sm:mt-[88px] overflow-hidden"
     >
       {/* Container */}
-      <div className="relative w-full h-full min-h-[calc(100vh-88px)] overflow-hidden flex items-center justify-between">
+      <div className="relative w-full h-full min-h-[calc(100vh-88px)] lg:min-h-[580px] overflow-hidden flex items-center justify-between">
         
         {/* Left Editorial Content (On mobile: vertically flows with prominent image card below text) */}
         <div 
-          className="w-full lg:w-[45%] h-full flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-5 sm:px-8 lg:px-16 pt-8 pb-12 lg:py-0 z-10"
+          className="w-full lg:w-[48%] xl:w-[45%] h-full flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-5 sm:px-8 lg:px-12 xl:px-16 pt-8 pb-12 lg:py-4 z-10"
         >
-          <span className="text-[12px] sm:text-[14px] font-bold tracking-[0.22em] uppercase text-[#00A99D] mb-3 sm:mb-6 block text-center lg:text-left">
+          <span className="text-[12px] sm:text-[14px] font-bold tracking-[0.22em] uppercase text-[#00A99D] mb-3 lg:mb-4 xl:mb-6 block text-center lg:text-left whitespace-nowrap">
             MULTISPECIALITY HOSPITAL IN COIMBATORE
           </span>
-          <h1 className="text-[36px] xs:text-[42px] sm:text-[58px] lg:text-[76px] xl:text-[88px] font-medium leading-[1.0] sm:leading-[0.98] tracking-[-0.03em] text-[#0B4A8B] mb-4 sm:mb-8 text-center lg:text-left">
+          <h1 className="text-[36px] xs:text-[42px] sm:text-[58px] lg:text-[68px] xl:text-[88px] font-medium leading-[1.0] sm:leading-[0.98] tracking-[-0.03em] text-[#0B4A8B] mb-4 lg:mb-6 xl:mb-8 text-center lg:text-left">
             YOUR HEALTH<br />
             IS OUR<br />
             <span className="text-[#00A99D]">PRIORITY.</span>
           </h1>
-          <p className="text-[15px] sm:text-[19px] lg:text-[22px] text-neutral-600 leading-[1.45] max-w-md mb-6 sm:mb-10 font-normal text-center lg:text-left mx-auto lg:mx-0">
-            <span className="font-semibold text-neutral-900 block tracking-wide">SABARI HOSPITAL</span>
+          <p className="text-[15px] sm:text-[19px] lg:text-[21px] xl:text-[22px] text-neutral-600 leading-[1.45] max-w-md mb-6 lg:mb-8 xl:mb-10 font-normal text-center lg:text-left mx-auto lg:mx-0">
+            <span className="font-semibold text-neutral-900 block tracking-wide">
+              SABARI HOSPITAL.
+            </span>{" "}
             Where expertise and empathy align.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-6 w-full sm:w-auto mb-8 lg:mb-0">
             <Link 
               to="/book-appointment" 
+              aria-label="Book an appointment at Sabari Hospitals Coimbatore"
               className="inline-flex items-center justify-center gap-2 bg-[#0B4A8B] text-white text-[13px] font-semibold tracking-[0.06em] uppercase px-6 sm:px-8 py-3.5 sm:py-4 border border-[#0B4A8B] hover:bg-[#00A99D] hover:border-[#00A99D] transition-all duration-300 w-full sm:w-auto text-center shadow-sm whitespace-nowrap"
             >
               <span>BOOK AN APPOINTMENT</span>
               <span>&rarr;</span>
             </Link>
-            <a 
-              href="#centres-of-excellence" 
+            <Link 
+              to="/doctors" 
               className="text-[13px] font-semibold tracking-[0.06em] uppercase text-[#0B4A8B] hover:text-[#00A99D] transition-colors py-2 sm:py-0 text-center whitespace-nowrap"
             >
-              EXPLORE OUR CARE
-            </a>
+              EXPLORE OUR DOCTORS
+            </Link>
           </div>
 
           {/* Dedicated Mobile Image Slideshow Card (Matching Reference Layout) */}

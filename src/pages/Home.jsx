@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
 import { Hero } from '../sections/Hero';
 import { OurApproach } from '../sections/OurApproach';
 import { NumbersSection } from '../sections/NumbersSection';
 import { VisionMissionSection } from '../sections/VisionMissionSection';
-import { CentresOfExcellence } from '../sections/CentresOfExcellence';
 import { HumanCare } from '../sections/HumanCare';
 import { FacilitiesSection } from '../sections/FacilitiesSection';
 import { HeartOfSabariSection } from '../sections/HeartOfSabariSection';
@@ -14,32 +12,17 @@ import { Footer } from '../sections/Footer';
 import { SEO } from '../components/layout/SEO';
 
 export function Home() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash === '#centres-of-excellence') {
-      const timer = setTimeout(() => {
-        const el = document.getElementById('centres-of-excellence');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 120);
-      return () => clearTimeout(timer);
-    }
-  }, [location.hash]);
-
   return (
     <div className="w-full bg-white flex flex-col items-center justify-start selection:bg-neutral-200">
       <SEO 
-        title="Sabari Hospitals | Multispeciality Hospital in Coimbatore"
-        description="Sabari Hospitals is a multispeciality hospital in Coimbatore, Tamil Nadu. Book appointments with expert doctors in obstetrics, surgery, diabetes, and critical care."
+        title="Sabari Hospitals | Multispeciality Hospital in Sai Baba Colony, Coimbatore"
+        description="Visit Sabari Hospitals in Sai Baba Colony, Coimbatore. Explore available medical specialties, doctor information, hospital facilities and appointment options."
         canonicalPath="/"
       />
       <Hero />
       <OurApproach />
       <NumbersSection />
       <VisionMissionSection />
-      <CentresOfExcellence />
       <HumanCare />
       <FacilitiesSection />
       <HeartOfSabariSection />

@@ -16,7 +16,7 @@ export function OurStory() {
     {
       year: "1999",
       title: "THE BEGINNING",
-      description: "Sabari Hospital was founded in Coimbatore with a foundational mission: to bring dependable, compassionate, and high-quality clinical healthcare to families."
+      description: "Sabari Hospital was founded in Saibaba Colony, Coimbatore with a foundational mission: to bring dependable, compassionate, and high-quality clinical healthcare to families."
     },
     {
       year: "2012",

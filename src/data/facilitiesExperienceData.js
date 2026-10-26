@@ -231,7 +231,7 @@ export const facilityServicesData = {
     introduction: "Our emergency ambulance service provides rapid 24/7 pre-hospital resuscitation, paramedic stabilization, and emergency transit across the city and surrounding areas.",
     overview: "Equipped with transport ventilators, multi-parameter defibrillators, oxygen systems, and critical emergency medications, our ambulances function as mobile intensive care units.",
     howItWorks: "Calls to our 24/7 emergency dispatch hotline immediately activate our paramedic response crew, while telemetry relays patient vital parameters to our awaiting trauma team.",
-    patientInformation: "Emergency hotline: +1 (800) 123-4567. Keep location landmarks and basic patient condition details ready when contacting dispatch.",
+    patientInformation: "Emergency hotline: 0422-2442200. Keep location landmarks and basic patient condition details ready when contacting dispatch.",
     relatedServices: [
       { categorySlug: "emergency-critical-care", serviceSlug: "emergency-services", title: "Emergency Services" },
       { categorySlug: "emergency-critical-care", serviceSlug: "intensive-care", title: "Intensive Care" }

@@ -75,10 +75,10 @@ export function LocationSection({ data }) {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="tel:+18001234567"
+                  href="tel:+914222442200"
                   className="inline-flex items-center gap-2 px-5 py-3 border border-neutral-300 text-[12px] font-mono uppercase font-medium text-black hover:border-black transition-colors"
                 >
-                  <span>Front Desk: +1 (800) 123-4567</span>
+                  <span>Front Desk: 0422-2442200</span>
                 </a>
                 <a
                   href={mapsUrl}
@@ -131,7 +131,7 @@ export function LocationSection({ data }) {
                     Sabari Hospitals Main Campus
                   </div>
                   <div className="text-[11px] font-mono text-neutral-500 mt-0.5">
-                    123 Medical Boulevard
+                    167/1, NSR Road, Saibaba Colony
                   </div>
                 </div>
               </div>

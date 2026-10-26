@@ -10,16 +10,9 @@ import { DoctorProfile } from './pages/DoctorProfile';
 import { DoctorsDirectory } from './pages/DoctorsDirectory';
 import { OurStory } from './pages/about/OurStory';
 import { Leadership } from './pages/about/Leadership';
-import { WhySabari } from './pages/about/WhySabari';
-import { Accreditations } from './pages/about/Accreditations';
-import { PatientExperiencePage } from './pages/about/PatientExperiencePage';
-import { Careers } from './pages/about/Careers';
 import { ContactPage } from './pages/ContactPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { BookAppointmentPage } from './pages/BookAppointmentPage';
-import { CentresLanding } from './pages/centre/CentresLanding';
-import { CategoryPage } from './pages/centre/CategoryPage';
-import { ServicePage } from './pages/centre/ServicePage';
 import { PrivacyPolicy } from './pages/legal/PrivacyPolicy';
 import { TermsOfService } from './pages/legal/TermsOfService';
 
@@ -66,16 +59,15 @@ function App() {
         <Route path="/about-us" element={<Navigate to="/about/our-story" replace />} />
         <Route path="/about/our-story" element={<OurStory />} />
         <Route path="/about/leadership" element={<Leadership />} />
-        <Route path="/about/why-sabari" element={<WhySabari />} />
-        <Route path="/about/accreditations" element={<Accreditations />} />
-        <Route path="/about/patient-experience" element={<PatientExperiencePage />} />
-        <Route path="/about/careers" element={<Careers />} />
+        <Route path="/about/why-sabari" element={<Navigate to="/about/our-story" replace />} />
+        <Route path="/about/accreditations" element={<Navigate to="/about/our-story" replace />} />
+        <Route path="/about/patient-experience" element={<Navigate to="/about/our-story" replace />} />
+        <Route path="/about/careers" element={<Navigate to="/about/our-story" replace />} />
 
-        {/* Centres of Excellence Pages */}
-        <Route path="/centre-of-excellence" element={<CentresLanding />} />
-        <Route path="/centre-of-excellence/:categorySlug" element={<CategoryPage />} />
-        <Route path="/centre-of-excellence/:categorySlug/:serviceSlug" element={<ServicePage />} />
-        <Route path="/centres-of-excellence" element={<Navigate to="/centre-of-excellence" replace />} />
+        {/* Removed COE redirects */}
+        <Route path="/centre-of-excellence" element={<Navigate to="/doctors" replace />} />
+        <Route path="/centre-of-excellence/*" element={<Navigate to="/doctors" replace />} />
+        <Route path="/centres-of-excellence" element={<Navigate to="/doctors" replace />} />
 
         {/* Gallery & Facilities */}
         <Route path="/gallery" element={<GalleryPage />} />

@@ -184,8 +184,8 @@ export function ContactPage() {
   return (
     <div className="w-full min-h-screen bg-white text-black flex flex-col justify-between selection:bg-neutral-200">
       <SEO 
-        title="Contact Us & Hospital Location | Sabari Hospitals Coimbatore"
-        description="Contact Sabari Hospitals in Coimbatore, Tamil Nadu. Reach our 24/7 emergency helpline at 0422-2442200, find directions, or submit a patient inquiry."
+        title="Contact Us & Hospital Location | Sabari Hospitals Sai Baba Colony, Coimbatore"
+        description="Contact Sabari Hospitals in Sai Baba Colony, Coimbatore. Reach our 24/7 emergency helpline at 0422-2442200, view campus address on NSR Road, or submit a patient inquiry."
         canonicalPath="/contact"
         schema={{
           "@context": "https://schema.org",
@@ -197,9 +197,16 @@ export function ContactPage() {
           "email": "sabarimultispecialityhospital@gmail.com",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "167/1, NSR Road, Saibaba Colony",
             "addressLocality": "Coimbatore",
             "addressRegion": "Tamil Nadu",
+            "postalCode": "641011",
             "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 11.023,
+            "longitude": 76.944
           }
         }}
       />
@@ -281,7 +288,7 @@ export function ContactPage() {
                   LOCATION
                 </span>
                 <span className="text-[19px] sm:text-[21px] font-medium text-black block">
-                  Coimbatore, Tamil Nadu
+                  Sai Baba Colony, Coimbatore
                 </span>
               </div>
 
@@ -300,26 +307,27 @@ export function ContactPage() {
                 </a>
               </div>
 
-              {/* Address Placeholder */}
+              {/* Full Verified Address */}
               <div>
                 <span className="text-[12px] font-mono tracking-[0.2em] uppercase text-neutral-400 block mb-1.5">
-                  ADDRESS
+                  HOSPITAL ADDRESS
                 </span>
-                <p className="text-[16px] sm:text-[18px] text-neutral-700 font-light leading-relaxed">
-                  Sabari Multispeciality Hospital,<br />
-                  Coimbatore, Tamil Nadu, India.
-                </p>
+                <address className="not-italic text-[16px] sm:text-[18px] text-neutral-700 font-light leading-relaxed">
+                  Sabari Multispeciality Hospital<br />
+                  167/1, NSR Road, Saibaba Colony,<br />
+                  Coimbatore, Tamil Nadu — 641011, India.
+                </address>
               </div>
 
-              {/* Optional Location Element */}
+              {/* Location Directions */}
               <div className="pt-2">
                 <a
-                  href="https://share.google/Z20ayBa3kPQp4m8LG"
+                  href="https://www.google.com/maps/search/?api=1&query=Sabari+Hospital+167%2F1+NSR+Road+Saibaba+Colony+Coimbatore+641011"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 text-[12px] font-mono font-semibold tracking-wider uppercase text-black hover:opacity-60 transition-opacity"
                 >
-                  <span>VIEW LOCATION</span>
+                  <span>GET DIRECTIONS ON GOOGLE MAPS</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                 </a>
               </div>

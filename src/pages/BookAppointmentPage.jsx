@@ -167,7 +167,15 @@ export function BookAppointmentPage() {
             "@type": "Hospital",
             "name": "Sabari Hospitals",
             "telephone": "+91-422-2442200",
-            "url": "https://sabarihospital.in/"
+            "url": "https://sabarihospital.in/",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "167/1, NSR Road, Saibaba Colony",
+              "addressLocality": "Coimbatore",
+              "addressRegion": "Tamil Nadu",
+              "postalCode": "641011",
+              "addressCountry": "IN"
+            }
           }
         }}
       />
@@ -221,10 +229,11 @@ export function BookAppointmentPage() {
               </div>
 
               <div className="pt-4 border-t border-neutral-200">
-                <p className="text-[12px] font-mono tracking-wider uppercase text-neutral-500 mb-1">Location</p>
+                <p className="text-[12px] font-mono tracking-wider uppercase text-neutral-500 mb-1">Campus Location</p>
                 <p className="text-neutral-700 font-light text-base leading-relaxed">
                   Sabari Multispeciality Hospital<br />
-                  Coimbatore, Tamil Nadu, India
+                  167/1, NSR Road, Saibaba Colony,<br />
+                  Coimbatore, Tamil Nadu 641011
                 </p>
               </div>
 
