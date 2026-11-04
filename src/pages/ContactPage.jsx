@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Footer } from '../sections/Footer';
 import { SEO } from '../components/layout/SEO';
@@ -184,9 +184,13 @@ export function ContactPage() {
   return (
     <div className="w-full min-h-screen bg-white text-black flex flex-col justify-between selection:bg-neutral-200">
       <SEO 
-        title="Contact Us & Hospital Location | Sabari Hospitals Sai Baba Colony, Coimbatore"
+        title="Contact Sabari Hospitals | Sai Baba Colony, Coimbatore"
         description="Contact Sabari Hospitals in Sai Baba Colony, Coimbatore. Reach our 24/7 emergency helpline at 0422-2442200, view campus address on NSR Road, or submit a patient inquiry."
         canonicalPath="/contact"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Contact Us', path: '/contact' }
+        ]}
         schema={{
           "@context": "https://schema.org",
           "@type": "Hospital",
@@ -236,7 +240,7 @@ export function ContactPage() {
                 transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="text-[30px] sm:text-[44px] md:text-[54px] lg:text-[44px] xl:text-[58px] font-display font-light text-black tracking-tight leading-[1.0] uppercase mb-8 whitespace-nowrap"
               >
-                LET'S CONNECT.
+                CONTACT US.
               </motion.h1>
 
               <motion.p
@@ -330,6 +334,23 @@ export function ContactPage() {
                   <span>GET DIRECTIONS ON GOOGLE MAPS</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                 </a>
+              </div>
+
+              {/* Patient Appointment Quick-Link */}
+              <div className="p-5 bg-neutral-50 rounded-xl border border-neutral-200 mt-6">
+                <span className="text-[11px] font-mono tracking-widest uppercase text-neutral-400 block mb-1.5">
+                  LOOKING FOR A CONSULTATION?
+                </span>
+                <p className="text-[14px] text-neutral-700 font-light mb-3">
+                  Need to consult a doctor? Book your appointment online with our medical specialists.
+                </p>
+                <Link
+                  to="/book-appointment"
+                  className="inline-flex items-center gap-2 text-[12px] font-semibold tracking-widest uppercase text-black hover:text-[#0B4A8B] transition-colors"
+                >
+                  <span>Book an Appointment Online</span>
+                  <span>&rarr;</span>
+                </Link>
               </div>
             </motion.div>
 

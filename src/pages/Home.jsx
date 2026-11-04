@@ -15,7 +15,7 @@ export function Home() {
   return (
     <div className="w-full bg-white flex flex-col items-center justify-start selection:bg-neutral-200">
       <SEO 
-        title="Sabari Hospitals | Multispeciality Hospital in Sai Baba Colony, Coimbatore"
+        title="Sabari Hospitals | Multispeciality Hospital in Coimbatore"
         description="Visit Sabari Hospitals in Sai Baba Colony, Coimbatore. Explore available medical specialties, doctor information, hospital facilities and appointment options."
         canonicalPath="/"
       />

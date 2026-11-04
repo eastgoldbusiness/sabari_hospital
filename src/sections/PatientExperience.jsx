@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { timelineData } from '../data/landingData';
 import { motion } from 'framer-motion';
 
@@ -17,6 +18,15 @@ export function PatientExperience() {
             YOUR JOURNEY.<br />
             <span className="text-[#00A99D]">OUR COMMITMENT.</span>
           </h2>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+            <Link 
+              to="/contact" 
+              className="inline-flex items-center gap-2 text-[12px] font-bold tracking-widest uppercase text-[#00A99D] hover:text-[#0B4A8B] transition-colors"
+            >
+              <span>Contact Patient Support Desk</span>
+              <span>&rarr;</span>
+            </Link>
+          </div>
         </div>
 
         {/* Right Timeline */}

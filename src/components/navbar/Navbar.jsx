@@ -162,13 +162,12 @@ export function Navbar() {
               <Phone className="w-4 h-4 text-neutral-800" />
             </a>
 
-            <button
-              type="button"
-              onClick={() => openAppointmentModal()}
-              className="px-3.5 py-2 rounded-full bg-black text-white text-[11px] font-semibold tracking-wider uppercase active:scale-95 transition-all"
+            <Link
+              to="/book-appointment"
+              className="px-3.5 py-2 rounded-full bg-black text-white text-[11px] font-semibold tracking-wider uppercase active:scale-95 transition-all inline-block"
             >
               Book
-            </button>
+            </Link>
 
             <button 
               type="button"
@@ -214,17 +213,26 @@ export function Navbar() {
                 
                 {/* About Us */}
                 <div>
-                  <button
-                    type="button"
-                    onClick={() => toggleMobileSubmenu('about')}
-                    className="w-full flex items-center justify-between text-left py-2 text-[20px] font-medium text-black cursor-pointer"
-                  >
-                    <span>About Us</span>
-                    <ChevronDown 
-                      size={18} 
-                      className={`text-neutral-400 transition-transform duration-200 ${mobileSubmenu === 'about' ? 'rotate-180 text-black' : ''}`} 
-                    />
-                  </button>
+                  <div className="w-full flex items-center justify-between py-2 text-[20px] font-medium text-black">
+                    <Link
+                      to="/about/our-story"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="hover:text-neutral-600 transition-colors"
+                    >
+                      About Us
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => toggleMobileSubmenu('about')}
+                      aria-label="Toggle About Us sub-menu"
+                      className="p-1 -mr-1 cursor-pointer text-neutral-400 hover:text-black transition-colors"
+                    >
+                      <ChevronDown 
+                        size={18} 
+                        className={`transition-transform duration-200 ${mobileSubmenu === 'about' ? 'rotate-180 text-black' : ''}`} 
+                      />
+                    </button>
+                  </div>
 
                   <AnimatePresence initial={false}>
                     {mobileSubmenu === 'about' && (

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Footer } from '../sections/Footer';
@@ -106,9 +107,13 @@ export function GalleryPage() {
   return (
     <div className="w-full min-h-screen bg-[#111827] text-white flex flex-col justify-between selection:bg-neutral-800">
       <SEO 
-        title="Hospital Facilities & Photo Gallery | Sabari Hospitals Coimbatore"
-        description="Explore authentic photographs of Sabari Hospitals in Coimbatore: clinical facilities, operating suites, outpatient consultation rooms, pharmacy, and medical specialists."
+        title="Hospital Gallery | Sabari Hospitals Coimbatore"
+        description="View the hospital photo gallery of Sabari Hospitals in Coimbatore. Tour our modern operation theatres, consultation chambers, patient wards, and campus facilities."
         canonicalPath="/gallery"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Gallery', path: '/gallery' }
+        ]}
       />
       
       {/* 
@@ -116,8 +121,18 @@ export function GalleryPage() {
         Takes full height below navbar (88px desktop / 72px mobile)
       */}
       <section className="relative w-full h-[calc(100dvh-72px)] sm:h-[calc(100vh-88px)] min-h-[600px] mt-[72px] sm:mt-[88px] overflow-hidden bg-[#111827]">
-        {/* Accessible Primary Page Heading for SEO Audit & Screen Readers */}
-        <h1 className="sr-only">Hospital Facilities &amp; Photo Gallery | Sabari Hospitals Coimbatore</h1>
+        {/* Visible Primary Page Heading & Context Overlay */}
+        <div className="absolute top-6 sm:top-10 left-6 sm:left-12 lg:left-16 z-10 pointer-events-none max-w-xl">
+          <span className="text-[11px] sm:text-[12px] font-mono tracking-[0.24em] uppercase text-[#00A99D] font-semibold mb-2 block">
+            SABARI HOSPITALS COIMBATORE
+          </span>
+          <h1 className="text-[28px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.08] tracking-[-0.02em] text-white">
+            HOSPITAL GALLERY
+          </h1>
+          <p className="text-[13px] sm:text-[15px] text-white/70 font-light mt-1.5 hidden sm:block">
+            Tour the clinical infrastructure, patient rooms, and facilities at Sabari Hospitals in Coimbatore.
+          </p>
+        </div>
         
         {/* Ambient Top Subtle Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#00A99D]/10 rounded-full blur-[140px] pointer-events-none" />
@@ -194,6 +209,96 @@ export function GalleryPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Editorial Content & Facilities Architecture Guide */}
+      <section className="w-full bg-[#0c101c] py-16 sm:py-24 px-6 lg:px-16 border-t border-white/10">
+        <div className="max-w-[1600px] w-full mx-auto flex flex-col gap-12">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10">
+            <div className="max-w-2xl">
+              <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[#00A99D] mb-3 block">
+                CAMPUS OVERVIEW
+              </span>
+              <h2 className="text-[28px] sm:text-[38px] lg:text-[44px] font-medium text-white tracking-tight leading-tight">
+                Modern Medical Infrastructure in Sai Baba Colony.
+              </h2>
+              <p className="text-[15px] sm:text-[16px] text-white/70 font-light leading-relaxed mt-3">
+                Located on NSR Road, Sabari Hospitals combines over 50 years of clinical experience with purpose-built medical infrastructure designed for safety, precision, and patient comfort.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap items-center gap-3">
+              <Link 
+                to="/doctors"
+                className="px-5 py-3 border border-white/20 hover:border-white text-white text-[12px] font-semibold tracking-wider uppercase transition-colors"
+              >
+                Explore Doctors &rarr;
+              </Link>
+              <Link 
+                to="/book-appointment"
+                className="px-6 py-3 bg-[#00A99D] hover:bg-[#009287] text-white text-[12px] font-semibold tracking-wider uppercase transition-colors"
+              >
+                Book Appointment &rarr;
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-[14px]">
+            <div className="p-6 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono text-[#00A99D] tracking-wider uppercase block mb-2">01 // SURGICAL SUITES</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Operating Theatres</h3>
+                <p className="text-white/60 font-light leading-relaxed">
+                  Advanced operating suites equipped with laminar airflow, surgical monitoring, and anaesthesia safety protocols.
+                </p>
+              </div>
+              <Link to="/about/our-story" className="mt-4 text-[12px] text-[#00A99D] hover:underline uppercase tracking-wider font-semibold">
+                About Our Care &rarr;
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono text-[#00A99D] tracking-wider uppercase block mb-2">02 // CRITICAL CARE</span>
+                <h3 className="text-lg font-semibold text-white mb-2">24/7 Emergency &amp; ICU</h3>
+                <p className="text-white/60 font-light leading-relaxed">
+                  Intensive care units and round-the-clock emergency care with continuous vital monitoring and ambulance response.
+                </p>
+              </div>
+              <Link to="/contact" className="mt-4 text-[12px] text-[#00A99D] hover:underline uppercase tracking-wider font-semibold">
+                Emergency &amp; Location &rarr;
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono text-[#00A99D] tracking-wider uppercase block mb-2">03 // CONSULTATIONS</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Specialist Chambers</h3>
+                <p className="text-white/60 font-light leading-relaxed">
+                  Dedicated outpatient consulting rooms for obstetrics, gynaecology, surgery, diabetes, pulmonology, and physiotherapy.
+                </p>
+              </div>
+              <Link to="/doctors" className="mt-4 text-[12px] text-[#00A99D] hover:underline uppercase tracking-wider font-semibold">
+                Meet Specialists &rarr;
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono text-[#00A99D] tracking-wider uppercase block mb-2">04 // PATIENT CARE</span>
+                <h3 className="text-lg font-semibold text-white mb-2">Pharmacy &amp; Diagnostics</h3>
+                <p className="text-white/60 font-light leading-relaxed">
+                  Fully stocked in-house pharmacy, clinical diagnostic laboratories, and patient-first reception coordination.
+                </p>
+              </div>
+              <Link to="/book-appointment" className="mt-4 text-[12px] text-[#00A99D] hover:underline uppercase tracking-wider font-semibold">
+                Schedule Visit &rarr;
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
       {/* Hospital Footer */}
       <Footer />

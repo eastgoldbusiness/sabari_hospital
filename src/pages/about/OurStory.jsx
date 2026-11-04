@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Footer } from '../../sections/Footer';
 import { ArrowRight, Clock, ShieldCheck, HeartHandshake } from 'lucide-react';
-import { useAppointment } from '../../context/AppointmentContext';
 import { SEO } from '../../components/layout/SEO';
 
 export function OurStory() {
-  const { openAppointmentModal } = useAppointment();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -33,9 +31,13 @@ export function OurStory() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Our Story & Heritage | Sabari Hospitals Coimbatore"
-        description="Discover the 50+ year legacy of Sabari Hospitals in Coimbatore, founded with a commitment to compassionate healthcare, clinical excellence, and patient trust."
+        title="About Sabari Hospitals | Our Hospital in Coimbatore"
+        description="Learn about Sabari Hospitals in Coimbatore, delivering compassionate patient care, surgical excellence, and medical innovation for over five decades."
         canonicalPath="/about/our-story"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'About Us', path: '/about/our-story' }
+        ]}
       />
       
       {/* 1. Editorial Hero */}
@@ -44,13 +46,13 @@ export function OurStory() {
           
           <div className="flex flex-col max-w-5xl">
             <span className="text-[12px] font-mono font-semibold tracking-[0.25em] uppercase text-neutral-400 mb-4 sm:mb-6 block">
-              OUR STORY
+              ABOUT SABARI HOSPITALS
             </span>
             <h1 className="text-[34px] sm:text-[54px] md:text-[68px] lg:text-[80px] xl:text-[92px] font-medium leading-[1.05] tracking-[-0.03em] break-words text-black mb-6 sm:mb-8">
-              A LEGACY OF CARE.
+              ABOUT SABARI HOSPITALS
             </h1>
             <p className="text-[16px] sm:text-[18px] lg:text-[21px] text-neutral-600 leading-relaxed max-w-2xl font-light">
-              Rooted in the community since 1999, Sabari Hospital has grown from a vision of compassionate service into a modern centre of clinical excellence.
+              Rooted in the community since 1999, Sabari Hospital has grown from a vision of compassionate service into a modern centre of clinical excellence in Coimbatore.
             </p>
           </div>
 
@@ -147,12 +149,19 @@ export function OurStory() {
             <p className="text-[15px] sm:text-[16px] text-neutral-600 leading-relaxed max-w-lg font-light mb-6 sm:mb-8">
               Every consultation at Sabari Hospital is guided by experienced clinicians who take time to listen, explain, and stand beside patients at each step of recovery.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-6">
               <Link 
                 to="/about/leadership"
                 className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-semibold tracking-widest uppercase text-black hover:opacity-70 transition-opacity"
               >
                 <span>Read About Our Leadership</span>
+                <span>&rarr;</span>
+              </Link>
+              <Link 
+                to="/doctors"
+                className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-semibold tracking-widest uppercase text-neutral-600 hover:text-black transition-colors"
+              >
+                <span>Explore Doctors &amp; Specialists</span>
                 <span>&rarr;</span>
               </Link>
             </div>
@@ -175,13 +184,20 @@ export function OurStory() {
               Connect with our medical team for personalized outpatient and specialist consultations.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => openAppointmentModal()}
-            className="px-8 py-4 bg-black text-white text-[12px] font-semibold tracking-widest uppercase hover:bg-neutral-800 transition-colors w-full sm:w-auto text-center shrink-0"
-          >
-            Book Appointment &rarr;
-          </button>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+            <Link
+              to="/book-appointment"
+              className="px-8 py-4 bg-black text-white text-[12px] font-semibold tracking-widest uppercase hover:bg-neutral-800 transition-colors text-center shrink-0 inline-block"
+            >
+              Book Appointment &rarr;
+            </Link>
+            <Link
+              to="/contact"
+              className="px-6 py-4 border border-neutral-300 text-neutral-800 text-[12px] font-semibold tracking-widest uppercase hover:border-black hover:text-black transition-colors text-center shrink-0 inline-block"
+            >
+              Contact Hospital
+            </Link>
+          </div>
         </div>
       </section>
 

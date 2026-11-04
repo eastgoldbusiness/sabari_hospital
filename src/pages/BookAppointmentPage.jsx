@@ -153,9 +153,13 @@ export function BookAppointmentPage() {
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200">
       <SEO 
-        title="Book Hospital Appointment in Coimbatore | Sabari Hospitals"
+        title="Book an Appointment | Sabari Hospitals Coimbatore"
         description="Book a hospital appointment in Coimbatore at Sabari Hospitals. Schedule outpatient doctor consultations across obstetrics, general surgery, diabetes & pulmonology."
         canonicalPath="/book-appointment"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Book Appointment', path: '/book-appointment' }
+        ]}
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
@@ -252,15 +256,35 @@ export function BookAppointmentPage() {
 
             <div className="flex flex-col gap-3">
               <span className="text-[11px] font-mono tracking-widest uppercase text-neutral-400">
-                EXPLORE MEDICAL SPECIALISTS
+                EXPLORE HOSPITAL INFORMATION
               </span>
               <Link 
                 to="/doctors" 
                 className="inline-flex items-center justify-between p-4 bg-white border border-neutral-200 rounded-xl hover:border-black transition-colors group"
               >
                 <div>
-                  <p className="text-sm font-semibold text-black">Meet Our Doctors & Surgeons</p>
+                  <p className="text-sm font-semibold text-black">Meet Our Doctors &amp; Surgeons</p>
                   <p className="text-xs text-neutral-500 font-light">View qualifications, bios, and consulting hours</p>
+                </div>
+                <ArrowRight size={18} className="text-neutral-400 group-hover:translate-x-1 group-hover:text-black transition-all" />
+              </Link>
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center justify-between p-4 bg-white border border-neutral-200 rounded-xl hover:border-black transition-colors group"
+              >
+                <div>
+                  <p className="text-sm font-semibold text-black">Hospital Contact &amp; Location</p>
+                  <p className="text-xs text-neutral-500 font-light">Campus directions on NSR Road, Sai Baba Colony</p>
+                </div>
+                <ArrowRight size={18} className="text-neutral-400 group-hover:translate-x-1 group-hover:text-black transition-all" />
+              </Link>
+              <Link 
+                to="/about/our-story" 
+                className="inline-flex items-center justify-between p-4 bg-white border border-neutral-200 rounded-xl hover:border-black transition-colors group"
+              >
+                <div>
+                  <p className="text-sm font-semibold text-black">About Sabari Hospitals</p>
+                  <p className="text-xs text-neutral-500 font-light">Five decades of dedicated clinical excellence</p>
                 </div>
                 <ArrowRight size={18} className="text-neutral-400 group-hover:translate-x-1 group-hover:text-black transition-all" />
               </Link>

@@ -30,6 +30,7 @@ export function SEO({
   type = "website",
   image = DEFAULT_IMAGE,
   schema = null,
+  breadcrumbs = null,
   noindex = false,
 }) {
   const canonicalUrl = canonicalPath.startsWith('http')
@@ -37,6 +38,43 @@ export function SEO({
     : `${SITE_URL}${canonicalPath ? (canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`) : '/'}`;
 
   const fullImageUrl = image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`;
+
+  // Build standard BreadcrumbList structured data if breadcrumbs prop provided
+  const breadcrumbSchema = (breadcrumbs && Array.isArray(breadcrumbs) && breadcrumbs.length > 0) ? {
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, index) => {
+      const crumbUrl = crumb.path.startsWith('http')
+        ? crumb.path
+        : `${SITE_URL}${crumb.path ? (crumb.path.startsWith('/') ? crumb.path : `/${crumb.path}`) : '/'}`;
+      return {
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": crumb.name,
+        "item": crumbUrl
+      };
+    })
+  } : null;
+
+  // Combine custom schema and breadcrumbs into clean JSON-LD graph if needed
+  let combinedSchema = null;
+  if (schema && breadcrumbSchema) {
+    const rawSchemaWithoutContext = { ...schema };
+    delete rawSchemaWithoutContext["@context"];
+    combinedSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        ...(schema["@graph"] ? schema["@graph"] : [rawSchemaWithoutContext]),
+        breadcrumbSchema
+      ]
+    };
+  } else if (schema) {
+    combinedSchema = schema;
+  } else if (breadcrumbSchema) {
+    combinedSchema = {
+      "@context": "https://schema.org",
+      ...breadcrumbSchema
+    };
+  }
 
   useEffect(() => {
     // 1. Title
@@ -76,14 +114,14 @@ export function SEO({
     const scriptId = 'dynamic-seo-schema';
     let scriptTag = document.getElementById(scriptId);
 
-    if (schema) {
+    if (combinedSchema) {
       if (!scriptTag) {
         scriptTag = document.createElement('script');
         scriptTag.id = scriptId;
         scriptTag.type = 'application/ld+json';
         document.head.appendChild(scriptTag);
       }
-      scriptTag.textContent = JSON.stringify(schema, null, 2);
+      scriptTag.textContent = JSON.stringify(combinedSchema, null, 2);
     } else if (scriptTag) {
       scriptTag.remove();
     }
@@ -93,7 +131,7 @@ export function SEO({
       const tag = document.getElementById(scriptId);
       if (tag) tag.remove();
     };
-  }, [title, description, canonicalUrl, type, fullImageUrl, schema, noindex]);
+  }, [title, description, canonicalUrl, type, fullImageUrl, combinedSchema, noindex]);
 
   // React 19 head tag hoisting support
   return (
@@ -110,10 +148,10 @@ export function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImageUrl} />
-      {schema && (
+      {combinedSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
         />
       )}
     </>

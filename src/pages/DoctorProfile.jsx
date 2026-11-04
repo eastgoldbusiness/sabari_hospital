@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { doctorsData } from '../data/landingData';
 import { ArrowLeft, Award, BookOpen, CalendarCheck, CheckCircle, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Footer } from '../sections/Footer';
-import { useAppointment } from '../context/AppointmentContext';
 import { SEO } from '../components/layout/SEO';
 
 export function DoctorProfile() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { openAppointmentModal } = useAppointment();
 
   const doctor = doctorsData.find(d => {
     if (!id) return false;
@@ -86,17 +84,22 @@ export function DoctorProfile() {
         type="profile"
         image={doctor.image}
         schema={physicianSchema}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Doctors', path: '/doctors' },
+          { name: doctor.name, path: `/doctors/${doctor.id}` }
+        ]}
       />
       <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-16 pb-20">
         
         {/* Back Button */}
-        <button 
-          onClick={() => navigate('/doctors')}
-          className="flex items-center gap-2 text-neutral-500 hover:text-black transition-colors mb-12 group cursor-pointer"
+        <Link 
+          to="/doctors"
+          className="flex items-center gap-2 text-neutral-500 hover:text-black transition-colors mb-12 group cursor-pointer inline-flex"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           <span className="text-[12px] font-semibold tracking-widest uppercase">All Doctors</span>
-        </button>
+        </Link>
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
@@ -144,14 +147,13 @@ export function DoctorProfile() {
               )}
             </div>
 
-            <button
-              type="button"
-              onClick={() => openAppointmentModal({ doctorId: doctor.id })}
+            <Link
+              to="/book-appointment"
               className="flex items-center justify-center gap-2 w-full px-6 py-4 border border-black bg-black text-white text-[13px] font-semibold tracking-[0.08em] uppercase hover:bg-neutral-800 transition-colors"
             >
               <CalendarCheck className="w-4 h-4" />
               Book Appointment
-            </button>
+            </Link>
           </div>
 
           {/* Right Column: Comprehensive Info */}

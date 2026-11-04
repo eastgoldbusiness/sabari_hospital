@@ -24,14 +24,13 @@ export function Footer() {
             Ready to prioritize<br />
             <span className="text-white/30">your health?</span>
           </h2>
-          <button
-            type="button"
-            onClick={() => openAppointmentModal()}
+          <Link
+            to="/book-appointment"
             className="group inline-flex items-center justify-center px-8 py-4 bg-white text-black text-[12px] font-semibold tracking-[0.15em] uppercase rounded-full hover:bg-neutral-200 transition-all duration-300 w-full sm:w-auto"
           >
             <span>Book a Consultation</span>
             <span className="ml-3 group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
-          </button>
+          </Link>
         </div>
         
         <div className="flex flex-col gap-4 text-[14px] lg:text-right">
@@ -91,8 +90,9 @@ export function Footer() {
         <div>
           <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">About Sabari</p>
           <ul className="space-y-2.5">
-            <li><Link to="/about/our-story" className="text-white/70 hover:text-white transition-colors">Our Story</Link></li>
-            <li><Link to="/about/leadership" className="text-white/70 hover:text-white transition-colors">Leadership</Link></li>
+            <li><Link to="/about/our-story" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
+            <li><Link to="/about/our-story" className="text-white/70 hover:text-white transition-colors">Our Story &amp; Heritage</Link></li>
+            <li><Link to="/about/leadership" className="text-white/70 hover:text-white transition-colors">Hospital Leadership</Link></li>
           </ul>
         </div>
 

@@ -173,6 +173,10 @@ export function TermsOfService() {
         title="Terms of Service & Medical Disclaimer | Sabari Hospitals Coimbatore"
         description="Review terms of service, website terms of use, and medical disclaimers for Sabari Hospitals in Coimbatore, Tamil Nadu."
         canonicalPath="/terms-of-service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Terms of Service', path: '/terms-of-service' }
+        ]}
       />
       
       {/* Header / Hero */}

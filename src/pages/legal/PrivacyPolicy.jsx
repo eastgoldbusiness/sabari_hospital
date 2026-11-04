@@ -217,6 +217,10 @@ export function PrivacyPolicy() {
         title="Privacy Policy | Sabari Hospitals Coimbatore"
         description="Read the privacy policy of Sabari Hospitals regarding patient data confidentiality, medical records protection, and compliance with Indian healthcare regulations."
         canonicalPath="/privacy-policy"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Privacy Policy', path: '/privacy-policy' }
+        ]}
       />
       
       {/* Header / Hero */}

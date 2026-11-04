@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export function HumanCare() {
@@ -32,6 +33,15 @@ export function HumanCare() {
             <p className="text-[16px] sm:text-[18px] lg:text-[22px] text-white/70 leading-[1.6] max-w-lg font-light">
               Every medical decision is made with transparency, medical ethics, and an uncompromising commitment to patient safety.
             </p>
+            <div>
+              <Link 
+                to="/about/leadership"
+                className="inline-flex items-center gap-2 text-[12px] font-bold tracking-widest uppercase text-[#00A99D] hover:text-white transition-colors"
+              >
+                <span>Meet Our Medical Leadership</span>
+                <span>&rarr;</span>
+              </Link>
+            </div>
           </div>
         </div>
 

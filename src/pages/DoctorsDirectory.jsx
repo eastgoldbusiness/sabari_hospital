@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { doctorsData } from '../data/landingData';
 import { Footer } from '../sections/Footer';
-import { useAppointment } from '../context/AppointmentContext';
 import { SEO } from '../components/layout/SEO';
 
 export function DoctorsDirectory() {
   const navigate = useNavigate();
-  const { openAppointmentModal } = useAppointment();
   const [activeIndex, setActiveIndex] = useState(0);
   const rowRefs = useRef([]);
   const isHoveringRef = useRef(false);
@@ -62,15 +60,19 @@ export function DoctorsDirectory() {
 
   const handleDoctorClick = (doctorId, e) => {
     if (e) e.stopPropagation();
-    navigate(`/doctor/${doctorId}`);
+    navigate(`/doctors/${doctorId}`);
   };
 
   return (
     <div data-nav-theme="light" className="w-full min-h-screen bg-white text-black selection:bg-neutral-200 selection:text-black">
       <SEO 
-        title="Doctors in Coimbatore | Medical Specialists & Surgeons | Sabari Hospitals"
-        description="Consult experienced doctors in Coimbatore at Sabari Hospitals. Find verified specialists in obstetrics, general surgery, diabetology, pulmonology & physiotherapy."
+        title="Doctors at Sabari Hospitals | Coimbatore"
+        description="Consult experienced doctors and surgeons at Sabari Hospitals Coimbatore across obstetrics, gynaecology, general surgery, diabetes, pulmonology & physiotherapy."
         canonicalPath="/doctors"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Doctors', path: '/doctors' }
+        ]}
       />
       
       {/* 1. Page Opening - Controlled and compact so preview is visible immediately */}
@@ -79,10 +81,10 @@ export function DoctorsDirectory() {
           
           <div className="flex flex-col w-full">
             <span className="text-[12px] font-mono font-semibold tracking-[0.25em] uppercase text-neutral-400 mb-3 block">
-              DOCTORS IN COIMBATORE
+              SABARI HOSPITALS COIMBATORE
             </span>
             <h1 className="text-[32px] sm:text-[54px] md:text-[68px] lg:text-[84px] font-medium leading-[1.05] tracking-[-0.03em] text-black mb-6 whitespace-normal sm:whitespace-nowrap break-words">
-              THE MINDS BEHIND SABARI.
+              DOCTORS AT SABARI HOSPITALS
             </h1>
 
             <div className="pt-4 border-t border-neutral-200">
@@ -141,27 +143,31 @@ export function DoctorsDirectory() {
                         </div>
 
                         {/* Explicit Action Label */}
-                        <div 
+                        <Link 
+                          to={`/doctors/${doctor.id}`}
+                          onClick={(e) => e.stopPropagation()}
                           className={`flex items-center gap-2 text-[12px] font-semibold tracking-wider uppercase transition-all duration-200 ${
                             isActive ? 'opacity-100 translate-x-0 text-black' : 'opacity-0 -translate-x-2 text-neutral-400 group-hover:opacity-100 group-hover:translate-x-0'
                           }`}
                         >
                           <span className="hidden sm:inline">VIEW PROFILE</span>
                           <span>&rarr;</span>
-                        </div>
+                        </Link>
                       </div>
 
                       {/* Large Typographic Name */}
                       <div className="overflow-hidden">
-                        <h2 
-                          className={`text-[30px] sm:text-[40px] lg:text-[48px] font-medium tracking-[-0.02em] leading-[1.05] transition-all duration-200 ${
-                            isActive 
-                              ? 'text-black translate-x-2 lg:translate-x-3' 
-                              : 'text-neutral-300 group-hover:text-black group-hover:translate-x-1'
-                          }`}
-                        >
-                          {doctor.displayName || doctor.name}
-                        </h2>
+                        <Link to={`/doctors/${doctor.id}`} onClick={(e) => e.stopPropagation()}>
+                          <h2 
+                            className={`text-[30px] sm:text-[40px] lg:text-[48px] font-medium tracking-[-0.02em] leading-[1.05] transition-all duration-200 ${
+                              isActive 
+                                ? 'text-black translate-x-2 lg:translate-x-3' 
+                                : 'text-neutral-300 group-hover:text-black group-hover:translate-x-1'
+                            }`}
+                          >
+                            {doctor.displayName || doctor.name}
+                          </h2>
+                        </Link>
                       </div>
 
                       {/* Speciality and Credentials */}
@@ -201,7 +207,11 @@ export function DoctorsDirectory() {
                       </div>
 
                       {/* Doctor Details Card */}
-                      <div className="flex items-start gap-4">
+                      <Link 
+                        to={`/doctors/${doctor.id}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-start gap-4"
+                      >
                         <img 
                           src={doctor.image} 
                           alt={doctor.name} 
@@ -222,7 +232,7 @@ export function DoctorsDirectory() {
                             View Profile &rarr;
                           </span>
                         </div>
-                      </div>
+                      </Link>
                     </div>
 
                     {/* Subtle underline reveal (Desktop Only) */}
@@ -247,13 +257,12 @@ export function DoctorsDirectory() {
                 </p>
               </div>
               <div className="flex items-center gap-4 w-full sm:w-auto">
-                <button
-                  type="button"
-                  onClick={() => openAppointmentModal()}
-                  className="w-full sm:w-auto px-5 py-2.5 border border-black text-[11px] font-semibold tracking-widest uppercase text-black hover:bg-black hover:text-white transition-colors text-center"
+                <Link
+                  to="/book-appointment"
+                  className="w-full sm:w-auto px-5 py-2.5 border border-black text-[11px] font-semibold tracking-widest uppercase text-black hover:bg-black hover:text-white transition-colors text-center inline-block"
                 >
                   Book Appointment
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -270,18 +279,16 @@ export function DoctorsDirectory() {
                 className="flex flex-col w-full max-w-[460px]"
               >
                 {/* Portrait Frame with Curved Corners, Luxury Shadow, and Hover Name Reveal */}
-                <div 
-                  onClick={(e) => handleDoctorClick(activeDoctor.id, e)}
-                  className="group relative w-full aspect-[4/5] max-h-[520px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:shadow-[0_28px_65px_rgba(0,0,0,0.18)] transition-all duration-500 bg-neutral-100 select-none cursor-pointer"
+                <Link 
+                  to={`/doctors/${activeDoctor.id}`}
+                  className="group relative w-full aspect-[4/5] max-h-[520px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:shadow-[0_28px_65px_rgba(0,0,0,0.18)] transition-all duration-500 bg-neutral-100 select-none cursor-pointer block"
                 >
                   <img
                     src={activeDoctor.image}
                     alt={activeDoctor.name}
                     className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
-
-
-                </div>
+                </Link>
 
                 {/* Doctor Name & Role Outside Image */}
                 <div className="mt-5 flex flex-col">
