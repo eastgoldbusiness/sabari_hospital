@@ -85,7 +85,7 @@ export function DoctorsDirectory() {
             <span className="text-[12px] font-mono font-semibold tracking-[0.25em] uppercase text-neutral-400 mb-3 block">
               SABARI HOSPITALS COIMBATORE
             </span>
-            <h1 className="text-[32px] sm:text-[54px] md:text-[68px] lg:text-[84px] font-medium leading-[1.05] tracking-[-0.03em] text-black mb-6 whitespace-normal sm:whitespace-nowrap break-words">
+            <h1 className="text-[26px] sm:text-[38px] md:text-[48px] lg:text-[60px] xl:text-[68px] font-medium leading-[1.08] tracking-[-0.03em] text-black mb-5 whitespace-normal sm:whitespace-nowrap break-words">
               DOCTORS AT SABARI HOSPITALS
             </h1>
 
