@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useAppointment } from '../context/AppointmentContext';
 
 export function AppointmentCTA() {
+  const { openAppointmentModal } = useAppointment();
+
   return (
     <section data-nav-theme="light" className="w-full bg-[#fafaf8] py-[160px] px-6 lg:px-16 text-center border-t border-neutral-100">
       <div className="max-w-[800px] w-full mx-auto flex flex-col items-center">
@@ -21,12 +23,13 @@ export function AppointmentCTA() {
             Book an appointment with the right specialist for your healthcare needs.
           </p>
           
-          <Link 
-            to="/contact" 
-            className="inline-flex items-center justify-center bg-black text-white text-[13px] font-semibold tracking-[0.04em] uppercase px-10 py-[20px] border border-black hover:bg-white hover:text-black transition-all duration-300"
+          <button 
+            type="button"
+            onClick={() => openAppointmentModal()}
+            className="inline-flex items-center justify-center bg-black text-white text-[13px] font-semibold tracking-[0.04em] uppercase px-10 py-[20px] border border-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
           >
             BOOK AN APPOINTMENT &rarr;
-          </Link>
+          </button>
         </motion.div>
       </div>
     </section>

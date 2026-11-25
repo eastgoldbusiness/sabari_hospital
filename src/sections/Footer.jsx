@@ -24,13 +24,14 @@ export function Footer() {
             Ready to prioritize<br />
             <span className="text-white/30">your health?</span>
           </h2>
-          <Link
-            to="/book-appointment"
-            className="group inline-flex items-center justify-center px-8 py-4 bg-white text-black text-[12px] font-semibold tracking-[0.15em] uppercase rounded-full hover:bg-neutral-200 transition-all duration-300 w-full sm:w-auto"
+          <button
+            type="button"
+            onClick={() => openAppointmentModal()}
+            className="group inline-flex items-center justify-center px-8 py-4 bg-white text-black text-[12px] font-semibold tracking-[0.15em] uppercase rounded-full hover:bg-neutral-200 transition-all duration-300 w-full sm:w-auto cursor-pointer"
           >
             <span>Book a Consultation</span>
             <span className="ml-3 group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
-          </Link>
+          </button>
         </div>
         
         <div className="flex flex-col gap-4 text-[14px] lg:text-right">
@@ -101,7 +102,7 @@ export function Footer() {
           <p className="text-white font-medium uppercase tracking-[0.15em] text-[11px] mb-4 text-white/50">Patient Care</p>
           <ul className="space-y-2.5">
             <li><Link to="/doctors" className="text-white/70 hover:text-white transition-colors">Doctors Directory</Link></li>
-            <li><Link to="/book-appointment" className="text-white/70 hover:text-white transition-colors">Book an Appointment</Link></li>
+            <li><button type="button" onClick={() => openAppointmentModal()} className="text-white/70 hover:text-white transition-colors text-left cursor-pointer">Book an Appointment</button></li>
             <li><Link to="/gallery" className="text-white/70 hover:text-white transition-colors">Hospital Gallery &amp; Facilities</Link></li>
             <li><Link to="/contact" className="text-white/70 hover:text-white transition-colors">Contact Us</Link></li>
           </ul>

@@ -4,9 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { doctorsData } from '../data/landingData';
 import { Footer } from '../sections/Footer';
 import { SEO } from '../components/layout/SEO';
+import { useAppointment } from '../context/AppointmentContext';
 
 export function DoctorsDirectory() {
   const navigate = useNavigate();
+  const { openAppointmentModal } = useAppointment();
   const [activeIndex, setActiveIndex] = useState(0);
   const rowRefs = useRef([]);
   const isHoveringRef = useRef(false);
@@ -257,12 +259,13 @@ export function DoctorsDirectory() {
                 </p>
               </div>
               <div className="flex items-center gap-4 w-full sm:w-auto">
-                <Link
-                  to="/book-appointment"
-                  className="w-full sm:w-auto px-5 py-2.5 border border-black text-[11px] font-semibold tracking-widest uppercase text-black hover:bg-black hover:text-white transition-colors text-center inline-block"
+                <button
+                  type="button"
+                  onClick={() => openAppointmentModal()}
+                  className="w-full sm:w-auto px-5 py-2.5 border border-black text-[11px] font-semibold tracking-widest uppercase text-black hover:bg-black hover:text-white transition-colors text-center inline-block cursor-pointer"
                 >
                   Book Appointment
-                </Link>
+                </button>
               </div>
             </div>
           </div>

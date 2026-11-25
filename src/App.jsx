@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Preloader } from './components/ui/Preloader';
 import { Navbar } from './components/navbar/Navbar';
-import { AppointmentProvider } from './context/AppointmentContext';
+import { AppointmentProvider, useAppointment } from './context/AppointmentContext';
 import { AppointmentModal } from './components/appointment/AppointmentModal';
 
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useSearchParams } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { DoctorProfile } from './pages/DoctorProfile';
 import { DoctorsDirectory } from './pages/DoctorsDirectory';
@@ -12,7 +12,6 @@ import { OurStory } from './pages/about/OurStory';
 import { Leadership } from './pages/about/Leadership';
 import { ContactPage } from './pages/ContactPage';
 import { GalleryPage } from './pages/GalleryPage';
-import { BookAppointmentPage } from './pages/BookAppointmentPage';
 import { PrivacyPolicy } from './pages/legal/PrivacyPolicy';
 import { TermsOfService } from './pages/legal/TermsOfService';
 
@@ -31,6 +30,20 @@ function ScrollToTop() {
   }, [pathname, hash]);
 
   return null;
+}
+
+function AppointmentRedirect() {
+  const { openAppointmentModal } = useAppointment();
+  const [searchParams] = useSearchParams();
+
+  React.useEffect(() => {
+    const doctor = searchParams.get('doctor') || '';
+    const doctorId = searchParams.get('doctorId') || '';
+    const department = searchParams.get('department') || '';
+    openAppointmentModal({ doctor, doctorId, department });
+  }, [openAppointmentModal, searchParams]);
+
+  return <Navigate to="/" replace />;
 }
 
 function App() {
@@ -78,10 +91,10 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
 
-        {/* Book Appointment Experience */}
-        <Route path="/book-appointment" element={<BookAppointmentPage />} />
-        <Route path="/appointment" element={<Navigate to="/book-appointment" replace />} />
-        <Route path="/appointments" element={<Navigate to="/book-appointment" replace />} />
+        {/* Book Appointment Experience - Redirect to Home & Open Global Modal */}
+        <Route path="/book-appointment" element={<AppointmentRedirect />} />
+        <Route path="/appointment" element={<AppointmentRedirect />} />
+        <Route path="/appointments" element={<AppointmentRedirect />} />
 
         {/* Legal & Compliance Pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

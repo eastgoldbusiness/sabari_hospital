@@ -133,12 +133,13 @@ export function Navbar() {
           </div>
 
           {/* 7. Book Appointment */}
-          <Link
-            to="/book-appointment"
-            className="text-[13px] font-semibold tracking-[0.02em] uppercase px-6 py-[14px] rounded border border-black bg-black text-white hover:bg-neutral-800 transition-all duration-200 ease-in-out shrink-0 text-center"
+          <button
+            type="button"
+            onClick={() => openAppointmentModal()}
+            className="text-[13px] font-semibold tracking-[0.02em] uppercase px-6 py-[14px] rounded border border-black bg-black text-white hover:bg-neutral-800 transition-all duration-200 ease-in-out shrink-0 text-center cursor-pointer"
           >
             Book Appointment
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Header Bar - Simple & Clean */}
@@ -162,12 +163,13 @@ export function Navbar() {
               <Phone className="w-4 h-4 text-neutral-800" />
             </a>
 
-            <Link
-              to="/book-appointment"
-              className="px-3.5 py-2 rounded-full bg-black text-white text-[11px] font-semibold tracking-wider uppercase active:scale-95 transition-all inline-block"
+            <button
+              type="button"
+              onClick={() => openAppointmentModal()}
+              className="px-3.5 py-2 rounded-full bg-black text-white text-[11px] font-semibold tracking-wider uppercase active:scale-95 transition-all inline-block cursor-pointer"
             >
               Book
-            </Link>
+            </button>
 
             <button 
               type="button"
@@ -299,13 +301,16 @@ export function Navbar() {
 
               {/* Simple Bottom Action Section */}
               <div className="p-6 border-t border-neutral-100 bg-white shrink-0 flex flex-col gap-3">
-                <Link
-                  to="/book-appointment"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openAppointmentModal();
+                  }}
                   className="w-full py-3.5 bg-black text-white text-[13px] font-semibold tracking-wider uppercase text-center rounded-xl hover:bg-neutral-800 active:scale-[0.98] transition-all cursor-pointer shadow-sm block"
                 >
                   Book Appointment
-                </Link>
+                </button>
                 <div className="text-center pt-1">
                   <a href="tel:+914222442200" className="text-[13px] text-neutral-600 hover:text-black font-medium transition-colors">
                     Emergency Helpline: <span className="text-black font-semibold">0422-2442200</span>

@@ -5,10 +5,12 @@ import { ArrowLeft, Award, BookOpen, CalendarCheck, CheckCircle, ShieldCheck } f
 import { motion } from 'framer-motion';
 import { Footer } from '../sections/Footer';
 import { SEO } from '../components/layout/SEO';
+import { useAppointment } from '../context/AppointmentContext';
 
 export function DoctorProfile() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { openAppointmentModal } = useAppointment();
 
   const doctor = doctorsData.find(d => {
     if (!id) return false;
@@ -147,13 +149,14 @@ export function DoctorProfile() {
               )}
             </div>
 
-            <Link
-              to="/book-appointment"
-              className="flex items-center justify-center gap-2 w-full px-6 py-4 border border-black bg-black text-white text-[13px] font-semibold tracking-[0.08em] uppercase hover:bg-neutral-800 transition-colors"
+            <button
+              type="button"
+              onClick={() => openAppointmentModal({ doctorId: doctor.id })}
+              className="flex items-center justify-center gap-2 w-full px-6 py-4 border border-black bg-black text-white text-[13px] font-semibold tracking-[0.08em] uppercase hover:bg-neutral-800 transition-colors cursor-pointer"
             >
               <CalendarCheck className="w-4 h-4" />
               Book Appointment
-            </Link>
+            </button>
           </div>
 
           {/* Right Column: Comprehensive Info */}

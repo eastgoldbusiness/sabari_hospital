@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAppointment } from '../../context/AppointmentContext';
 
 export function PatientSupport({ data, onTriggerFormSubject }) {
   const [activeModal, setActiveModal] = useState(null);
+  const { openAppointmentModal } = useAppointment();
 
-  const handleAction = (type, title) => {
+  const handleAction = (type) => {
     if (type === 'feedback') {
       if (onTriggerFormSubject) {
         onTriggerFormSubject('Patient Feedback & Clinical Care Experience');
@@ -14,11 +16,7 @@ export function PatientSupport({ data, onTriggerFormSubject }) {
     } else if (type === 'support') {
       setActiveModal('support');
     } else if (type === 'appointment') {
-      if (onTriggerFormSubject) {
-        onTriggerFormSubject('Outpatient Specialist Appointment Assistance');
-      }
-      const el = document.getElementById('enquiry');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      openAppointmentModal();
     }
   };
 

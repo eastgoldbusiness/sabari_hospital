@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone } from 'lucide-react';
+import { useAppointment } from '../context/AppointmentContext';
 
 const HERO_IMAGES = [
   "/hero_image.png",
@@ -12,6 +13,7 @@ const HERO_IMAGES = [
 ];
 
 export function Hero() {
+  const { openAppointmentModal } = useAppointment();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -50,14 +52,15 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-6 w-full sm:w-auto mb-8 lg:mb-0">
-            <Link 
-              to="/book-appointment" 
+            <button 
+              type="button"
+              onClick={() => openAppointmentModal()}
               aria-label="Book an appointment at Sabari Hospitals Coimbatore"
-              className="inline-flex items-center justify-center gap-2 bg-[#0B4A8B] text-white text-[13px] font-semibold tracking-[0.06em] uppercase px-6 sm:px-8 py-3.5 sm:py-4 border border-[#0B4A8B] hover:bg-[#00A99D] hover:border-[#00A99D] transition-all duration-300 w-full sm:w-auto text-center shadow-sm whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 bg-[#0B4A8B] text-white text-[13px] font-semibold tracking-[0.06em] uppercase px-6 sm:px-8 py-3.5 sm:py-4 border border-[#0B4A8B] hover:bg-[#00A99D] hover:border-[#00A99D] transition-all duration-300 w-full sm:w-auto text-center shadow-sm whitespace-nowrap cursor-pointer"
             >
               <span>BOOK AN APPOINTMENT</span>
               <span>&rarr;</span>
-            </Link>
+            </button>
             <Link 
               to="/doctors" 
               className="text-[13px] font-semibold tracking-[0.06em] uppercase text-[#0B4A8B] hover:text-[#00A99D] transition-colors py-2 sm:py-0 text-center whitespace-nowrap"

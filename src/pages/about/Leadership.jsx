@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../../sections/Footer';
 import { SEO } from '../../components/layout/SEO';
+import { useAppointment } from '../../context/AppointmentContext';
 
 export function Leadership() {
+  const { openAppointmentModal } = useAppointment();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -201,12 +203,13 @@ export function Leadership() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
-            <Link
-              to="/book-appointment"
-              className="px-8 py-4 bg-black text-white text-[12px] font-semibold tracking-widest uppercase hover:bg-neutral-800 transition-colors text-center shrink-0 inline-block"
+            <button
+              type="button"
+              onClick={() => openAppointmentModal()}
+              className="px-8 py-4 bg-black text-white text-[12px] font-semibold tracking-widest uppercase hover:bg-neutral-800 transition-colors text-center shrink-0 inline-block cursor-pointer"
             >
               Book Appointment &rarr;
-            </Link>
+            </button>
             <Link
               to="/doctors"
               className="px-6 py-4 border border-neutral-300 text-neutral-800 text-[12px] font-semibold tracking-widest uppercase hover:border-black hover:text-black transition-colors text-center shrink-0 inline-block"

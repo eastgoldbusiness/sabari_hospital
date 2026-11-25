@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Footer } from '../sections/Footer';
 import { SEO } from '../components/layout/SEO';
+import { useAppointment } from '../context/AppointmentContext';
 
 export function ContactPage() {
+  const { openAppointmentModal } = useAppointment();
   const [searchParams] = useSearchParams();
   const subjectParam = searchParams.get('subject') || '';
 
@@ -344,13 +346,14 @@ export function ContactPage() {
                 <p className="text-[14px] text-neutral-700 font-light mb-3">
                   Need to consult a doctor? Book your appointment online with our medical specialists.
                 </p>
-                <Link
-                  to="/book-appointment"
-                  className="inline-flex items-center gap-2 text-[12px] font-semibold tracking-widest uppercase text-black hover:text-[#0B4A8B] transition-colors"
+                <button
+                  type="button"
+                  onClick={() => openAppointmentModal()}
+                  className="inline-flex items-center gap-2 text-[12px] font-semibold tracking-widest uppercase text-black hover:text-[#0B4A8B] transition-colors cursor-pointer text-left"
                 >
                   <span>Book an Appointment Online</span>
                   <span>&rarr;</span>
-                </Link>
+                </button>
               </div>
             </motion.div>
 
